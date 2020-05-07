@@ -12,10 +12,15 @@
 - Home page content :-
 
 >>> Header
+
 >>> Title
+
 >>> About 
+
 >>> Achievements 
+
 >>> Recent notifications 
+
 >>> Footer
 
 - Every page must contain header and footer
