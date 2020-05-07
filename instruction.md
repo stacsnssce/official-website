@@ -2,7 +2,7 @@
 
 ### Basic flow of pages
 
-![enter image description here](https://raw.githubusercontent.com/stacsnssce/official-website/master/flow.png)
+![enter image description here](flow.png)
 
 ### Instructions
 
