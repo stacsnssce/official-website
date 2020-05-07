@@ -12,11 +12,11 @@
 - Home page content :-
 
 >>> Header
-Title
-About 
-Achievements 
-Recent notifications 
-Footer
+>>> Title
+>>> About 
+>>> Achievements 
+>>> Recent notifications 
+>>> Footer
 
 - Every page must contain header and footer
 - Use multiples of 4 for giving padding, margin and font size
