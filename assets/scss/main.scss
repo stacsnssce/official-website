@@ -1,0 +1,19 @@
+@import './variable';
+@import './mixins';
+@import './materialize.scss';
+
+
+.brand-logo{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    height: 50%;
+  }
+}
+
+.nav-wrapper {
+  padding-left: 20px;
+}
