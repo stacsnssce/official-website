@@ -21,6 +21,4 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-![enter image description here](https://avatars3.githubusercontent.com/u/64917063?s=460&u=f0b68202fb309e46f74d0a58f57fa02924aa0d98&v=4)
-
-![enter image description here](https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png)
+![enter image description here](https://github.com/stacsnssce.png?size=200) ![enter image description here](https://upload.wikimedia.org/wikipedia/commons/3/3c/Nuxt-js.png)
