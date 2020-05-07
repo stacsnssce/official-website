@@ -1,13 +1,10 @@
 <template>
-  <div class="container">
-    <div>
-      Home Page
-    </div>
+  <div>
+    Awards Page
   </div>
 </template>
 
 <script>
-
 export default {
 
 }

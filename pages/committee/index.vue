@@ -1,13 +1,10 @@
 <template>
-  <div class="container">
-    <div>
-      Home Page
-    </div>
+  <div>
+    Committee Page
   </div>
 </template>
 
 <script>
-
 export default {
 
 }
