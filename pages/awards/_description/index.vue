@@ -1,6 +1,6 @@
 <template>
   <div>
-    Awards Description
+    Award Description
   </div>
 </template>
 
