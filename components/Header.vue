@@ -39,6 +39,11 @@
               Gallery
             </nuxt-link>
           </li>
+          <li>
+            <nuxt-link to="/blog">
+              Blog
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -72,6 +77,11 @@
       <li>
         <nuxt-link to="/gallery">
           Gallery
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/blog">
+          Blog
         </nuxt-link>
       </li>
     </ul>
