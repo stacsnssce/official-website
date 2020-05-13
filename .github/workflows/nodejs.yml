@@ -23,5 +23,5 @@ jobs:
     - run: npm install
     - run: npm install push-dir
     - run: npm install nuxt
-    - run: nuxt generate
+    - run: npm run generate
     - run: npm run deploy
