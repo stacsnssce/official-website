@@ -15,13 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup Node
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm install push-dir
-    - run: npm install nuxt
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - run: npm ci
     - run: npm run generate
     - run: npm run deploy
