@@ -22,5 +22,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm install push-dir
-    - run: npm run generate
+    - run: nuxt generate
     - run: npm run deploy
