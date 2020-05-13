@@ -63,6 +63,8 @@ export default {
     ]
   },
 
+  router: { base: '/official-website/' },
+
   /*
   ** Build configuration
   */
