@@ -27,3 +27,4 @@
 - Use multiples of 4 for giving padding, margin and font size
 - Follow the colors provide in the pallet
 - This project will be version controlled using git and github
+- Comment under the issues while you are working on it
