@@ -4,16 +4,15 @@
 name: NuxtJS CI
 
 on:
-  watch:
-    types: [started]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   deploy:
     name: Generate Static Site
     runs-on: ubuntu-latest
-
-    if: github.actor == github.event.repository.owner.login
-
     steps:
       - uses: actions/checkout@v2
 
