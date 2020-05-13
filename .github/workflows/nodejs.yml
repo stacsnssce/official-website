@@ -31,7 +31,6 @@ jobs:
 
       - run: npm ci
       - run: npm run generate
-      - run: npm run deploy
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
