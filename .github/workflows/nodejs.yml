@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  generate:
+  deploy:
     name: Generate Static Site
     runs-on: ubuntu-latest
 
