@@ -1,0 +1,56 @@
+{
+  "committee": [
+    {
+      "id": "1",
+      "name": "Prof. Syam Sankar",
+      "designation": "Faculty Advisor",
+      "url": "",
+      "profiles": {
+                    "instagram": "",
+                    "twitter": "",
+                    "linkedin": "",
+                    "github": "",
+                    "website": ""
+                  }
+    },
+    {	
+      "id": "2",
+      "name": "Milind Soorya",
+      "designation": "Chairman",
+      "url": "",
+      "profiles": {
+                    "instagram": "",
+                    "twitter": "",
+                    "linkedin": "",
+                    "github": "",
+                    "website": ""
+                  }
+    },
+    {
+      "id": "3",
+      "name": "Meekha E Saji",
+      "url": "",
+      "designation": "NewsletterEditor",
+      "profiles": {
+                    "instagram": "",
+                    "twitter": "",
+                    "linkedin": "",
+                    "github": "",
+                    "website": ""
+                  }
+    },
+    {
+      "id": "4",
+      "name": "Allen K Abraham",
+      "url": "",
+      "designation": "Website Maintainer",
+      "profiles": {
+                    "instagram": "",
+                    "twitter": "",
+                    "linkedin": "",
+                    "github": "",
+                    "website": ""
+                  }
+    }
+  ]
+}
