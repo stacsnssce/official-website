@@ -1,7 +1,7 @@
 {
   "committee": [
     {
-      "id": "1",
+      "id": "A",
       "name": "Prof. Syam Sankar",
       "designation": "Faculty Advisor",
       "url": "",
@@ -14,7 +14,7 @@
                   }
     },
     {	
-      "id": "2",
+      "id": "B",
       "name": "Milind Soorya",
       "designation": "Chairman",
       "url": "",
@@ -27,7 +27,7 @@
                   }
     },
     {
-      "id": "3",
+      "id": "C",
       "name": "Meekha E Saji",
       "url": "",
       "designation": "NewsletterEditor",
@@ -40,7 +40,7 @@
                   }
     },
     {
-      "id": "4",
+      "id": "D",
       "name": "Allen K Abraham",
       "url": "",
       "designation": "Website Maintainer",
