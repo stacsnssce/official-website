@@ -17,7 +17,8 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "frontmatter-markdown-loader": "^3.4.2",
     "jquery": "^3.5.1",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.12.2",
+    "vue-carousel-3d": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
