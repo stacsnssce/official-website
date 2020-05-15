@@ -15,7 +15,7 @@
     {
       "name": "Milind Soorya",
       "designation": "Chairman",
-      "url": "",
+      "url": "https://via.placeholder.com/150/0000FF/808080",
       "profiles": {
                     "instagram": "",
                     "twitter": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Meekha E Saji",
-      "url": "",
+      "url": "https://via.placeholder.com/150/0000FF/808080",
       "designation": "NewsletterEditor",
       "profiles": {
                     "instagram": "",
@@ -38,25 +38,13 @@
     },
     {
       "name": "Allen K Abraham",
-      "url": "",
+      "url": "https://via.placeholder.com/150/0000FF/808080",
       "designation": "Website Maintainer",
       "profiles": {
                     "instagram": "",
                     "twitter": "",
                     "linkedin": "",
                     "github": "",
-                    "website": ""
-                  }
-    },
-    {
-      "name": "Mohammed Arshu",
-      "designation": "Member",
-      "url": "https://github.com/arshupt.png?size=200",
-      "profiles": {
-                    "instagram": "",
-                    "twitter": "",
-                    "linkedin": "",
-                    "github": "https://github.com/arshupt",
                     "website": ""
                   }
     }
