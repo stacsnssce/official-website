@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper #2979ff blue accent-3">
         <nuxt-link to="/" class="brand-logo">
