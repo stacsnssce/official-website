@@ -1,8 +1,8 @@
 <template>
-  <section class="container">
+  <div>
     {{ /*eslint-disable-next-line*/ }}
-    <p class="fontchange">COMMITTEE</p>
-    <div class="posts">
+    <div class="fontchange">COMMITTEE</div>
+    <div class="posts container">
       <div class="row">
       <div v-for="post in posts" :key="post.id" class="post">
       <div class="col s4 m3">
@@ -15,22 +15,24 @@
             <p>{{ post.designation }}</p>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{ post.name }}<i class="material-icons right">close</i></span>
-            <p><a v-bind:href="post.profiles.instagram">{{ post.profiles.instagram }}</a></p>
-            <p><a v-bind:href="post.profiles.twitter">{{ post.profiles.twitter }}</a></p>
-            <p><a v-bind:href="post.profiles.linkedin">{{ post.profiles.linkedin }}</a></p>
-            <p><a v-bind:href="post.profiles.github">{{ post.profiles.github }}</a></p>
-            <p><a v-bind:href="post.profiles.website">{{ post.profiles.website }}</a></p>
+            <span class="card-title grey-text text-darken-4 fontedit">{{ post.name }}<i class="material-icons right">close</i></span>
+            <b class="fontedit">
+            <p v-show="post.profiles.instagram"><a v-bind:href="post.profiles.instagram">Instagram</a></p>
+            <p v-show="post.profiles.twitter"><a v-bind:href="post.profiles.twitter">Twitter</a></p>
+            <p v-show="post.profiles.linkedin"><a v-bind:href="post.profiles.linkedin">Linked In</a></p>
+            <p v-show="post.profiles.github"><a v-bind:href="post.profiles.github">Git Hub</a></p>
+            <p v-show="post.profiles.website"><a v-bind:href="post.profiles.website">Website</a></p></b>
           </div>
         </div>
       </div>
       </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
+/* eslint-disable */ 
 import axios from 'axios'
 export default {
   async asyncData (context) {
@@ -44,11 +46,15 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap');
+<style lang='scss'>
 .fontchange{
-    font-family: 'Work Sans';
-    font-size: 40px;
+    font-family: 'rockwell';
+    font-weight: bold;
+    font-size: 100px;
     text-align: center;
+    color: blue;
+}
+.fontedit{
+  text-align: center;
 }
 </style>
