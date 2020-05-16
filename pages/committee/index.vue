@@ -1,8 +1,11 @@
 <template>
   <div>
     {{ /*eslint-disable-next-line*/ }}
+    <div id=body>
     <div class="fontchange">COMMITTEE</div>
-    <div class="posts container">
+    </div>
+    <div class="card">
+    <div class="container">
       <div class="row">
       <div v-for="post in posts" :key="post.id" class="post">
       <div class="col s4 m3">
@@ -28,6 +31,7 @@
       </div>
       </div>
     </div>
+    </div>
   </div>
 </template>
 
@@ -47,14 +51,28 @@ export default {
 </script>
 
 <style lang='scss'>
+#body{
+  height: 100vh;
+  background-image: url('~@/assets/images/committee.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .fontchange{
     font-family: 'rockwell';
     font-weight: bold;
-    font-size: 100px;
-    text-align: center;
+    font-size: 110px;
     color: blue;
+    padding-top: 85px;
+    padding-left: 20px;
+    
 }
 .fontedit{
   text-align: center;
+  font-size: 16px;
+}
+.con{
+  position:absolute;
 }
 </style>
