@@ -7,7 +7,7 @@
           <div class='card-panel hoverable'>
             <p class="center-align text">{{c.designation}}</p>
             <div class='card-image center-align'>
-              <img class="circle responsive-image" src='/profilepic.png'>
+              <img class="circle responsive-image" :src='c.url'>
             </div>
             <div class='card-content center-align text'>
               <p>{{ c.name }}</p>
@@ -90,7 +90,6 @@ export default {
 <style lang="scss">
 .card-panel{
 border-radius: 16px 16px 16px 16px;
-border-block-end-color: aqua;
 box-shadow: 0 4px 4px grey;
 height: 400px;
 }
