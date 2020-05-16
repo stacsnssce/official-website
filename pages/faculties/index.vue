@@ -11,7 +11,13 @@
         <div class="col s12 m4 l6">
           <div class="card-panel hoverable">
             <div class="card-image center-align">
-              <img class="circle responsive-image" :src="`${c.url || '/download.png'}`">
+              <progressive-img
+                class="faculty-img circle responsive-image"
+                :src="`${c.url || '/download.png'}`"
+                placeholder="/download.png"
+                :alt="`${c.name}`"
+                :blur="30"
+              />
             </div>
             <div class="card-content center-align text">
               <p style="font-size:20px">
@@ -35,6 +41,7 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
   async asyncData (context) {
     return await axios
@@ -49,6 +56,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.faculty-img {
+  width: 225px !important;
+  height: 225px !important;
+
+  img {
+    width: 225px!important;
+    height: 225px!important;
+    object-fit: cover;
+  }
+}
+</style>
 <style lang="scss" scoped>
 .card-panel {
   border-radius: 16px 16px 16px 16px;
@@ -59,11 +79,6 @@ export default {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-}
-img {
-  width: 225px;
-  height: 225px;
-  object-fit: cover;
 }
 a:hover {
   text-decoration: underline;

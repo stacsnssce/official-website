@@ -33,7 +33,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '@/plugins/materialize.js',ssr: false}
+    {src: '@/plugins/materialize.js',ssr: false},
+    {src: '@/plugins/vue-progessive-image.js',ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules
@@ -48,7 +49,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
   ],
   /*
   ** Axios module configuration
