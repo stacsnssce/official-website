@@ -1,12 +1,6 @@
 <template>
   <div class="container">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    >
-    <link rel="stylesheet" href="style.css">
     <div class="center-align">
       <h4>Our Faculties</h4>
     </div>
@@ -20,11 +14,15 @@
               <img class="circle responsive-image" :src="`${c.url || '/download.png'}`">
             </div>
             <div class="card-content center-align text">
-              <p style="font-size:20px">{{ c.name }}</p>
-              <p class="center-align text">{{ c.designation }}</p>
-              <a href="c.profile">
+              <p style="font-size:20px">
+                {{ c.name }}
+              </p>
+              <p class="center-align text">
+                {{ c.designation }}
+              </p>
+              <a :href="`${c.profile || 'http://nssce.ac.in'}`">
                 View Profile
-                <i class="fa fa-info-circle"></i>
+                <i class="fa fa-info-circle" />
               </a>
               &nbsp;
               &nbsp;

@@ -96,6 +96,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.sidenav-overlay {
+  z-index: 0 !important;
+}
 </style>
