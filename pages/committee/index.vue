@@ -72,7 +72,4 @@ export default {
   text-align: center;
   font-size: 16px;
 }
-.con{
-  position:absolute;
-}
 </style>
