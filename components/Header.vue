@@ -101,6 +101,13 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+a {
+  font-size: 18px;
+  font-weight: 600;
+}
+</style>
+
 <style lang="scss">
 .sidenav-overlay {
   z-index: 0 !important;
