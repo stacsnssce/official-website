@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -13,7 +12,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
+      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' }
@@ -62,6 +62,7 @@ export default {
       'assets/scss/_variable.scss'
     ]
   },
+
 
   /*
   ** Build configuration
