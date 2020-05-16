@@ -63,6 +63,7 @@ export default {
 img {
   width: 225px;
   height: 225px;
+  object-fit: cover;
 }
 a:hover {
   text-decoration: underline;

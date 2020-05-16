@@ -48,9 +48,9 @@
       </div>
     </nav>
 
-    <ul id="mobile-demo" class="sidenav">
+    <ul id="mobile-demo" class="sidenav sidenav-close">
       <li>
-        <nuxt-link to="/committee">
+        <nuxt-link to="/committee" class="sidenav-close">
           Committee
         </nuxt-link>
       </li>
