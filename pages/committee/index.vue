@@ -50,30 +50,5 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-#body{
-  height: 100vh;
-  background-image: url('~@/assets/images/committee.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.fontchange{
-    font-family: 'rockwell';
-    font-weight: bold;
-    font-size: 110px;
-    color: rgb(0, 102, 255);
-    padding-top: 85px;
-    padding-left: 20px;
-    
-}
-.fontedit{
-  text-align: center;
-  font-size: 16px;
-}
-.body {
-    display:flex
-
-}
+<style>
 </style>
