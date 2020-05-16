@@ -50,6 +50,11 @@
 
     <ul id="mobile-demo" class="sidenav sidenav-close">
       <li>
+        <nuxt-link to="/" class="sidenav-close">
+          Home
+        </nuxt-link>
+      </li>
+      <li>
         <nuxt-link to="/committee" class="sidenav-close">
           Committee
         </nuxt-link>
