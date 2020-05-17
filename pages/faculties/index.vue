@@ -13,8 +13,8 @@
             <div class="card-image center-align">
               <progressive-img
                 class="faculty-img circle responsive-image"
-                :src="`${c.url || '/download.png'}`"
-                placeholder="/download.png"
+                :src="`${c.url || '/profilepic.png'}`"
+                placeholder="/profilepic.png"
                 :alt="`${c.name}`"
                 :blur="30"
               />
