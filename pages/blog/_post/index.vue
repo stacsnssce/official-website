@@ -16,7 +16,6 @@ const md = require('markdown-it')({
   html: true,
   typographer: true
 })
-
 // Let's require the needed modules
 export default {
   async asyncData (context) {
