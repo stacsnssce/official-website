@@ -64,3 +64,9 @@
  * @param {Object=} options
  * @returns {Function}
  */
+
+/**
+ * vuex v3.3.0
+ * (c) 2020 Evan You
+ * @license MIT
+ */
