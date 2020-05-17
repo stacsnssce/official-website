@@ -34,7 +34,7 @@
               </h5>
             </div>
           </div>
-          <nuxt-link :to="`/blog/${post.id.slice(0,-3)}`">
+          <nuxt-link :to="{ name: 'blog-slug', params: { slug: post.id, body: post.body} }">
             Read More....
           </nuxt-link>
         </div>
@@ -57,10 +57,13 @@ import axios from 'axios'
 const fm = require('front-matter')
 
 export default {
-  async asyncData (context) {
-    return await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
+  fetch ({ store }) {
+    const psts = []
+    return axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
       .then(({ data }) => {
-        const psts = []
+        /* eslint-disable no-console */
+        console.log(data)
+
         data.forEach(async (element) => {
           await axios.get(element.download_url)
             .then((res) => {
@@ -69,15 +72,26 @@ export default {
               console.log(mdf)
               psts.push({
                 attribute: mdf.attributes,
-                id: element.name
+                body: mdf.body,
+                id: element.name.slice(0, -3)
               })
             })
+          if (data[data.length - 1] === element) {
+            console.log(`PSTS : ${psts}`)
+            store.commit('blogPosts', psts)
+          }
         })
-        return {
-          posts: psts
-        }
       })
+      .then(() => {
+      })
+  },
+  computed: {
+    posts () {
+      return this.$store.state.posts
+    }
   }
+  // async asyncData (context) {
+  // }
 }
 </script>
 
