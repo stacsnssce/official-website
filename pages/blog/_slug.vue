@@ -22,20 +22,13 @@ export default {
             post: payload
         }
       } else {
-        if(params.body) {
-          return {
-            content: md.render(params.body)
-          }
-        }
-        else {
-          return await axios.get(`https://raw.githubusercontent.com/stacsnssce/webdata/master/posts/${params.slug}.md`)
-            .then((res) => {
-              const mdf = fm(res.data)
-              return {
-                content: md.render(mdf.body)
-              }
-            })
-        }
+        return await axios.get(`https://raw.githubusercontent.com/stacsnssce/webdata/master/posts/${params.slug}.md`)
+          .then((res) => {
+            const mdf = fm(res.data)
+            return {
+              content: md.render(mdf.body)
+            }
+          })
       }
   },
   data () {
