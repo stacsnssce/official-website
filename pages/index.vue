@@ -17,10 +17,7 @@ Vue.use(VueCarousel);
 <script>
 
 export default {
-  components: {
-    Carousel,
-    Slide
-  } 
+
 }
 </script>
 
