@@ -34,7 +34,7 @@
               </h5>
             </div>
           </div>
-          <nuxt-link :to="{ name: 'blog-slug', params: { slug: post.id, body: post.body} }">
+          <nuxt-link :to="`/blog/${post.slug}/${post.id}`">
             Read More....
           </nuxt-link>
         </div>
@@ -72,6 +72,7 @@ export default {
               console.log(mdf)
               psts.push({
                 attribute: mdf.attributes,
+                slug: mdf.attributes.title,
                 body: mdf.body,
                 id: element.name.slice(0, -3)
               })
