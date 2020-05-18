@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper #2979ff blue accent-3">
         <nuxt-link to="/" class="brand-logo">
@@ -48,9 +48,14 @@
       </div>
     </nav>
 
-    <ul id="mobile-demo" class="sidenav">
+    <ul id="mobile-demo" class="sidenav sidenav-close">
       <li>
-        <nuxt-link to="/committee">
+        <nuxt-link to="/" class="sidenav-close">
+          Home
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/committee" class="sidenav-close">
           Committee
         </nuxt-link>
       </li>
@@ -96,6 +101,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+a {
+  font-size: 18px;
+  font-weight: 600;
+}
+</style>
 
+<style lang="scss">
+.sidenav-overlay {
+  z-index: 0 !important;
+}
 </style>

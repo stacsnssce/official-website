@@ -12,7 +12,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
+      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' }
@@ -32,7 +33,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '@/plugins/materialize.js',ssr: false}
+    {src: '@/plugins/materialize.js',ssr: false},
+    {src: '@/plugins/vue-progessive-image.js',ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules
@@ -47,7 +49,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
   ],
   /*
   ** Axios module configuration
