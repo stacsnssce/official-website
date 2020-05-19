@@ -1,9 +1,9 @@
 <template>
-  <section class="container card activities-wrapper">
-    <h4 class="page-title"><b>Activities</b></h4>
-    <div class="row activities">
+  <section class="container card activities-wrapper ">
+    <h4 class="page-title center-align"><b>Activities</b></h4>
+    <div class="row activities m3">
       <div v-for="activity in activities" :key="activity.id" class="col s12 m6">
-        <div  class="card activity">
+        <div  class="card activity-card m4">
           <nuxt-link :to="`/activities/${activity.id}`">
             <div class="card-image">
               <img :src=activity.attribute.cover>
@@ -69,7 +69,7 @@ export default {
   box-sizing: border-box;
   min-width: 200px;
   margin: 0 auto;
-  padding: 45px;
+  padding:20px;
   border-left: 1px solid
   #eaecef;
   border-right: 1px solid
@@ -78,14 +78,12 @@ export default {
   #eaecef;
 }
 .page-title{
-  text-align: center;
   color: #220e24;
 }
 .activities{
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
 }
-.activity {
+.activity-card{
   text-align: center;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
@@ -93,10 +91,10 @@ export default {
   border-radius: 8px;
   padding: 10px;
 }
-.activity:hover {
-  transform: scale(0.99, 0.99);
+.activity-card:hover {
+  transform: scale(0.98, 0.99);
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.2);
-  transition: 0.2s linear;
+  transition: 0.3s ;
 }
 .act-card-title{
   color: #0c3c78;

@@ -52,6 +52,7 @@ export default {
     h1{
       text-align: center;
       font-size: 2em;
+      font-weight: bold;
     }
     p{
       justify-content: center;
