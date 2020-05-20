@@ -8,13 +8,13 @@
     <br>
     <div class="row">
       <section v-for="c in content.faculties" :key="c.designation">
-        <div class="col s12 m4 l6">
+        <div class="col s12 m4 l4">
           <div class="card-panel hoverable">
             <div class="card-image center-align">
               <progressive-img
                 class="faculty-img circle responsive-image"
                 :src="`${c.url || '/profilepic.png'}`"
-                placeholder="/profilepic.png"
+                placeholder="/imageplaceholder1x1.png"
                 :alt="`${c.name}`"
                 :blur="30"
               />
