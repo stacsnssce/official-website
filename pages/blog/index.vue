@@ -8,7 +8,7 @@
         <div class="col blog-col s12 m3 l4 center-align hide-on-med-and-up">
           <progressive-img
             :src="`${post.attribute.image}`"
-            :placeholder="`https://github.com/${post.attribute.author}.png?size=10`"
+            :placeholder="`/imageplaceholder1x1.png`"
             blur="30"
             delay="200"
             class="blog-image center-align"
@@ -41,7 +41,7 @@
         <div class="col blog-col s12 m3 l4 center-align hide-on-small-only ">
           <progressive-img
             :src="`${post.attribute.image}`"
-            :placeholder="`https://github.com/${post.attribute.author}.png?size=10`"
+            :placeholder="`/imageplaceholder1x1.png`"
             blur="30"
             delay="200"
             class="blog-image center-align"
@@ -58,30 +58,25 @@ const fm = require('front-matter')
 
 export default {
   fetch ({ store }) {
-    const psts = []
+    // const psts = []
     return axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
-      .then(({ data }) => {
+      .then(async ({ data }) => {
         /* eslint-disable no-console */
-        console.log(data)
-
-        data.forEach(async (element) => {
-          await axios.get(element.download_url)
+        store.commit('blogPosts', await Promise.all(data.map(async (element) => {
+          return await axios.get(element.download_url)
             .then((res) => {
               const mdf = fm(res.data)
               // eslint-disable-next-line
-              console.log(mdf)
-              psts.push({
+              // console.log(mdf)
+              return {
                 attribute: mdf.attributes,
                 slug: element.sha,
                 body: mdf.body,
                 id: element.name.slice(0, -3)
-              })
+              }
             })
-          if (data[data.length - 1] === element) {
-            console.log(`PSTS : ${psts}`)
-            store.commit('blogPosts', psts)
-          }
-        })
+            // store.commit('blogPosts', psts)
+        })))
       })
       .then(() => {
       })
