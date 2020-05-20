@@ -1,12 +1,11 @@
-let dynamicBlogRoutes = async () => {
+const dynamicRoutes = async () => {
   const fm = require('front-matter')
   const md = require('markdown-it')({
     html: true,
     typographer: true
   })
   const axios = require('axios') 
-
-  return await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
+  const dynamicBlogRoutes =  await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
     .then(async (data) => {
       return await Promise.all(data.data.map(async (dat) => {
         return {
@@ -14,15 +13,35 @@ let dynamicBlogRoutes = async () => {
           payload: await axios.get(dat.download_url)
             .then((res) => {
               const mdf = fm(res.data)
-              return md.render(mdf.body)
+              return {
+                title: mdf.attributes,
+                body:md.render(mdf.body)
+              }
             })
         }
       }))
     })
-}
 
-let dynamicRoutes = () => {
-  return dynamicBlogRoutes()
+  const dynamicActivitiesRoutes = await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/activities')
+    .then(async (data) => {
+      return await Promise.all(data.data.map(async (dat) => {
+        return {
+          route: '/activities/' + dat.sha,
+          payload: await axios.get(dat.download_url)
+            .then((res) => {
+              const mdf = fm(res.data)
+              return {
+                title: mdf.attributes,
+                body:md.render(mdf.body)
+              }
+            })
+        }
+      }))
+    })
+  
+  const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
+
+  return route
 }
 
 export default {
