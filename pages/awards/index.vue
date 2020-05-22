@@ -5,31 +5,21 @@
       <div class="row">
         <div v-for="award in awards" :key="award.id" class="col s12">
           <div class="card small">
-            <div class="card-image">
-              <progressive-img
-                :src="`${award.attribute.cover}`"
-                placeholder="/imageplaceholder800x500.png"
-                blur="30"
-                delay="200"
-                class="award-image center-align"
-              />
-              <nuxt-link
-                :to="{
-                  name: 'awards-desc',
-                  params: { desc: award.desc, id: award.id }
-                }"
-                class="desc-link"
-              >
-                <a class="btn-floating halfway-fab waves-effect waves-light red"
-                  ><i class="material-icons">add</i></a
-                >
-              </nuxt-link>
-            </div>
-            <div class="card-content">
-              <h5 class="award-card-title">
-                <b>{{ award.attribute.title }}</b>
-              </h5>
-            </div>
+            <nuxt-link :to="{ name: 'awards-desc', params: { desc: award.desc, id: award.id }}">
+              <div class="card-image">
+                <progressive-img
+                  :src="`${award.attribute.cover}`"
+                  placeholder="/imageplaceholder800x500.png"
+                  blur="30"
+                  delay="200"
+                  class="award-image center-align"/>
+              </div>
+              <div class="card-content">
+                <h5>
+                  <b>{{ award.attribute.title }}</b>
+                </h5>
+              </div>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -81,35 +71,17 @@ export default {
 </script>
 
 <style lang="scss">
-.award-image {
-  max-width: inherit !important;
-  padding: 0 !important;
-
-  // * {
-  //   padding: 0 !important;
-  // }
-
-  .progressive-image-wrapper,
-  .progressive-image-main,
-  .progressive-image-placeholder {
-    max-width: inherit !important;
-    padding: 0 !important;
-  }
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-}
 .wrapper {
   margin: 12px auto;
-  // padding: 0px 0px;
+  // padding: 20px 0px;
 
   .award-title {
     font-size: 32px;
     font-weight: bolder;
   }
   .award-card {
-    padding: 20px;
+    width: 90%;
+    padding: 5%;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(73, 72, 72, 0.2);
     transition: 0.2s linear;
@@ -123,16 +95,33 @@ export default {
         box-shadow: 0 0 20px rgba(100, 100, 100, 0.5);
       }
     }
+    .award-image {
+      max-width: inherit !important;
+      padding: 0 !important;
+
+      * {
+        padding: 0 !important;
+      }
+
+      .progressive-image-wrapper,
+      .progressive-image-main,
+      .progressive-image-placeholder {
+        max-width: inherit !important;
+        padding: 0 !important;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
     .card-content {
       background: transparent;
       padding: 0px 5px;
       margin: 0px;
       font-size: 18px;
+      font-weight: normal;
       text-align: center;
-      // border-bottom: solid 1px #c9bcbc;
-      .card-title {
-        font-weight: bold;
-      }
+      color: black;
     }
   }
 }
