@@ -19,13 +19,15 @@ export default {
   async asyncData({params, payload}) {
       if(payload) {
         return {
-            post: payload
+            title: payload.title,
+            content: payload.body
         }
       } else {
-        return await axios.get(`https://raw.githubusercontent.com/stacsnssce/webdata/master/posts/${params.slug}.md`)
+        return await axios.get(`https://raw.githubusercontent.com/stacsnssce/webdata/master/posts/${params.id}.md`)
           .then((res) => {
             const mdf = fm(res.data)
             return {
+              title: mdf.attributes,
               content: md.render(mdf.body)
             }
           })

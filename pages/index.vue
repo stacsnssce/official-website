@@ -28,7 +28,9 @@
 </template>
 <script>
 export default {
-
+  mounted () {
+    this.$materialize.carousel()
+  }
 }
 </script>
 

@@ -1,3 +1,49 @@
+const dynamicRoutes = async () => {
+  const fm = require('front-matter')
+  const md = require('markdown-it')({
+    html: true,
+    typographer: true
+  })
+  const axios = require('axios') 
+  const dynamicBlogRoutes =  await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/posts')
+    .then(async (data) => {
+      return await Promise.all(data.data.map(async (dat) => {
+        return {
+          route: '/blog/' + dat.sha,
+          payload: await axios.get(dat.download_url)
+            .then((res) => {
+              const mdf = fm(res.data)
+              return {
+                title: mdf.attributes,
+                body:md.render(mdf.body)
+              }
+            })
+        }
+      }))
+    })
+
+  const dynamicActivitiesRoutes = await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/activities')
+    .then(async (data) => {
+      return await Promise.all(data.data.map(async (dat) => {
+        return {
+          route: '/activities/' + dat.sha,
+          payload: await axios.get(dat.download_url)
+            .then((res) => {
+              const mdf = fm(res.data)
+              return {
+                title: mdf.attributes,
+                body:md.render(mdf.body)
+              }
+            })
+        }
+      }))
+    })
+  
+  const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
+
+  return route
+}
+
 export default {
   mode: 'universal',
   /*
@@ -8,12 +54,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      {name: 'theme-color', content: '#13a59b'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
-      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' }
@@ -33,8 +80,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '@/plugins/materialize.js',ssr: false},
-    {src: '@/plugins/vue-progessive-image.js',ssr: false}
+    { src: '@/plugins/materialize.js', ssr: false },
+    { src: '@/plugins/vue-progessive-image.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -63,7 +110,9 @@ export default {
       'assets/scss/_variable.scss'
     ]
   },
-
+  generate: {
+    routes: dynamicRoutes
+  },
 
   /*
   ** Build configuration
@@ -72,7 +121,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
