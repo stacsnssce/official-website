@@ -1,14 +1,18 @@
 <template>
-  <section class=" description">
-    <div class="description-header">
-      .
-    </div>
-    <div class=" container card large description-content">
-      <div class="col description-text">
-        <h3 class="description-header">Award Title</h3>
-        <h5 class="description-date">date</h5>
-        {{ /*eslint-disable-next-line*/ }}
-        <div v-html="content"></div>
+  <section class="description">
+    <div :style="`background-image: url('${title.cover}');`"
+      class="description-cover">
+      <div class="container card description-content">
+        <div class="col description-text">
+          <h3 class="container description-header">
+            <b>{{ title.title }}</b>
+          </h3>
+          <!-- <h5 class="description-date">date</h5> -->
+          {{ /*eslint-disable-next-line*/ }}
+          <div>
+            <p v-html="content"></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -53,17 +57,17 @@ export default {
 
 <style lang="scss">
 .description {
-  padding: 0px;
-  line-height: 1.6em;
+  box-sizing: border-box;
+  min-width: 200px;
   margin: 0px;
+  padding-bottom: 200px;
 
-  background-position-x: center;
-  // background-image: url("./images/967682.jpg");
-  background-size: 1080px 350px;
-  background-repeat: no-repeat;
-
-  // background-attachment: fixed;
-  align-self: center;
+  .description-cover {
+    background-position-x: center;
+    background-size: 1080px 350px;
+    background-repeat: no-repeat;
+    align-self: center;
+  }
 
   .description-content {
     margin: 12px auto;
@@ -78,21 +82,23 @@ export default {
       scale: 1.02;
       box-shadow: 0 0 30px rgba(100, 100, 100, 0.2);
     }
-  }
 
-  .description-text {
-    padding: 0px 40px;
-    margin: 0px auto;
+    .description-text {
+      padding: 0px 40px;
+      margin: 0px auto;
+      justify-content: center;
+      text-align: justify;
 
-    .description-header {
-      font-weight: bold;
-      text-align: center;
-    }
-    .description-date {
-      text-align: center;
-      font-size: 1.2em;
-      font-style: italic;
-      color: rgb(85, 79, 79);
+      .description-header {
+        font-weight: bold;
+        text-align: center;
+      }
+      .description-date {
+        text-align: center;
+        font-size: 1.2em;
+        font-style: italic;
+        color: rgb(85, 79, 79);
+      }
     }
   }
 }
