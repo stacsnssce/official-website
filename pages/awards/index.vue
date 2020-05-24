@@ -28,46 +28,39 @@
 </template>
 
 <script>
-import axios from "axios";
-const fm = require("front-matter");
+import axios from 'axios'
+const fm = require('front-matter')
 
 export default {
-  fetch({ store }) {
-    return axios
-      .get("https://api.github.com/repos/stacsnssce/webdata/contents/awards")
+  fetch ({ store }) {
+    return axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/awards')
       .then(async ({ data }) => {
         /* eslint-disable no-console */
         // console.log(data)
-
-        store.commit(
-          "Activities",
-          await Promise.all(
-            data.map(async element => {
-              return await axios.get(element.download_url).then(res => {
-                const mdf = fm(res.data);
-                // eslint-disable-next-line
-                // console.log(mdf)
-                return {
-                  attribute: mdf.attributes,
-                  desc: element.sha,
-                  body: mdf.body,
-                  id: element.name.slice(0, -3)
-                };
-              });
-              // store.commit('Awards', awards)
-            })
-          )
-        );
-      });
+        store.commit('Activities', await Promise.all(data.map(async (element) => {
+          return await axios.get(element.download_url).then((res) => {
+            const mdf = fm(res.data)
+            // eslint-disable-next-line
+            // console.log(mdf)
+            return {
+              attribute: mdf.attributes,
+              desc: element.sha,
+              body: mdf.body,
+              id: element.name.slice(0, -3)
+            }
+          })
+          // store.commit('Awards', awards)
+        })))
+      })
   },
   computed: {
-    awards() {
-      return this.$store.state.activities;
+    awards () {
+      return this.$store.state.activities
     }
   }
   // async asyncData (context) {
   // }
-};
+}
 </script>
 
 <style lang="scss">
