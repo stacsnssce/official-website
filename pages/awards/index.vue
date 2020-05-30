@@ -57,9 +57,17 @@ export default {
     awards () {
       return this.$store.state.activities
     }
-  }
+  },
   // async asyncData (context) {
   // }
+  head () {
+    return {
+      title: 'Awards - STACS - NSS College of Engineering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The Students Association of Computer Science (STACS) recognises the achievements of students and appreciate them for gaining the awards through their efforts and talents ' }
+      ]
+    }
+  }
 }
 </script>
 
