@@ -10,7 +10,7 @@ export default {
     return {
       title: 'STACS Gallery',
       meta: [
-        { hid: 'description', name: 'description', content: 'Gallery of STACS' }
+        { hid: 'description', name: 'description', content: 'Photo gallery showcasing events and activities of STACS' }
       ]
     }
   }
