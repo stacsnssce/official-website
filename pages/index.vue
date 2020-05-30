@@ -165,7 +165,7 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
+<style lang='scss' scoped>
   #landing{
     height: 2580px;
     background-image: url('~@/assets/images/nss.png');
