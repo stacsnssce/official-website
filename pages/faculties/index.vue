@@ -53,14 +53,6 @@ export default {
           content: data
         }
       })
-  },
-  head () {
-    return {
-      title: 'Faculties - Department of Computer Science And Engineering - NSSCE',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Faculties of Department of Computer Science And Engineering in NSS College of Engineering. The faculties provide constant support for students' }
-      ]
-    }
   }
 }
 </script>
