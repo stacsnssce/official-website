@@ -66,6 +66,14 @@ export default {
           content: data
         }
       })
+  },
+  head () {
+    return {
+      title: 'Committee - STACS - NSS College of Engineering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Committee of STudents Association of Computer Science (STACS) in NSS College of Engineering. The Commitee ensures the regular functioning and proper coordination within the association' }
+      ]
+    }
   }
 }
 </script>
