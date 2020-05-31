@@ -64,17 +64,9 @@ export default {
     activities () {
       return this.$store.state.activities
     }
-  },
+  }
   // async asyncData (context) {
   // }
-  head () {
-    return {
-      title: 'Activities - STACS - NSS College of Engineering',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Activities and Events conducted by STACS to encourage students and give them more opportunities' }
-      ]
-    }
-  }
 }
 </script>
 
