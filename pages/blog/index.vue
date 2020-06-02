@@ -85,9 +85,17 @@ export default {
     posts () {
       return this.$store.state.posts
     }
-  }
+  },
   // async asyncData (context) {
   // }
+  head () {
+    return {
+      title: 'Blog Posts - STACS',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Here is the Blogs and thoughts shared by students of Department of Computer Science and Engineering' }
+      ]
+    }
+  }
 }
 </script>
 

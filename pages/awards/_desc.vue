@@ -1,6 +1,7 @@
 <template>
   <section class="description">
-    <div :style="`background-image: url('${title.cover}');`"
+    <div
+    :style="`background-image: url('${title.cover}');`"
       class="description-cover">
       <div class="container card description-content">
         <div class="col description-text">
