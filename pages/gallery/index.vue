@@ -39,8 +39,19 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  async asyncData (context) {
+    return await axios
+      .get(
+        'https://raw.githubusercontent.com/stacsnssce/webdata/master/gallery.json'
+      )
+      .then(({ data }) => {
+        return {
+          content: data
+        }
+      })
+  }
 }
 </script>
 <style>
