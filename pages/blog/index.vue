@@ -113,13 +113,14 @@ export default {
   .blog-card {
     padding: 20px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(100, 100, 100,0.2);
+    box-shadow: 0 0 10px rgba(100, 100, 100,0.5);
     transition: 0.2s linear;
     border-radius: 8px;
+    transform: scale(1.01);
 
     &:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 10px rgba(100, 100, 100,0.5);
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(100, 100, 100,0.2);
     }
     .blog-col {
       padding: 0 !important;
