@@ -32,7 +32,7 @@ import 'materialize-css'
 export default {}
 </script>
 
-<style>
+<style scoped>
 .bgimg {
   height: 100%;
   width: 100%;
