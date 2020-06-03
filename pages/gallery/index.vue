@@ -2,12 +2,12 @@
   <div>
     <!-- {{ gallery }} -->
     <h1>Gallery</h1>
-    <section v-for="ga in gallery" v-bind:key="ga.title">
+    <section v-for="ga in gallery" :key="ga.title">
       <h4>
         {{ ga.title }}
       </h4>
       <div>
-        <img v-for="im in ga.images" v-bind:key="im" v-bind:src="im" />
+        <img v-for="im in ga.images" :key="im" :src="im" />
       </div>
     </section>
   </div>
