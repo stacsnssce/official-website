@@ -1,22 +1,23 @@
 <template>
   <section class="wrapper container">
-    <h1 class="award-title center-align">Newsletter</h1>
-    <div class="container award-card">
+    <h1 class="newsletter-title center-align">Newsletter</h1>
+    <div class="container newsletter-card">
       <div class="row">
-        <div v-for="award in awards" :key="award.id" class="col s12">
+        <div v-for="newsletter in newsletters" :key="newsletter.id" class="col s12">
           <div class="card small">
-            <nuxt-link :to="{ name: 'awards-desc', params: { desc: award.desc, id: award.id }}">
+            <nuxt-link :to="{ name: 'newsletter-newsletter', params: { desc: newsletter.desc, id: newsletter.id }}">
               <div class="card-image">
                 <progressive-img
-                  :src="`${award.attribute.cover}`"
-                  placeholder="/imageplaceholder800x500.png"
+                  :src="`${newsletter.attribute.cover}`"
+                  placeholder="/imageplaceholder250.png"
                   blur="30"
                   delay="200"
-                  class="award-image center-align"/>
+                  class="newsletter-image center-align"/>
               </div>
               <div class="card-content">
+                <b class="date">{{ newsletter.attribute.year }}</b>
                 <h5>
-                  <b>{{ award.attribute.title }}</b>
+                  <b>{{ newsletter.attribute.name }}</b>
                 </h5>
               </div>
             </nuxt-link>
@@ -33,7 +34,7 @@ const fm = require('front-matter')
 
 export default {
   fetch ({ store }) {
-    return axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/awards')
+    return axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/newsletter')
       .then(async ({ data }) => {
         /* eslint-disable no-console */
         // console.log(data)
@@ -49,12 +50,12 @@ export default {
               id: element.name.slice(0, -3)
             }
           })
-          // store.commit('Awards', awards)
+          // store.commit('Newsletters', newsletters)
         })))
       })
   },
   computed: {
-    awards () {
+    newsletters () {
       return this.$store.state.activities
     }
   },
@@ -62,7 +63,7 @@ export default {
   // }
   head () {
     return {
-      title: 'Awards - STACS - NSS College of Engineering',
+      title: 'Newsletter - STACS - NSS College of Engineering',
       meta: [
         { hid: 'description', name: 'description', content: 'The Students Association of Computer Science (STACS) recognises the achievements of students and appreciate them for gaining the awards through their efforts and talents ' }
       ]
@@ -76,11 +77,11 @@ export default {
   margin: 12px auto;
   // padding: 20px 0px;
 
-  .award-title {
+  .newsletter-title {
     font-size: 32px;
     font-weight: bolder;
   }
-  .award-card {
+  .newsletter-card {
     width: 90%;
     padding: 5%;
     cursor: pointer;
@@ -96,7 +97,7 @@ export default {
         box-shadow: 0 0 20px rgba(100, 100, 100, 0.5);
       }
     }
-    .award-image {
+    .newsletter-image {
       max-width: inherit !important;
       padding: 0 !important;
 
@@ -117,12 +118,17 @@ export default {
     }
     .card-content {
       background: transparent;
-      padding: 0px 5px;
+      padding: 10px 5px;
       margin: 0px;
       font-size: 18px;
       font-weight: normal;
       text-align: center;
       color: black;
+
+      .date{
+        font-weight: lighter;
+        color: darnewsletterkslategray;
+      }
     }
   }
 }
