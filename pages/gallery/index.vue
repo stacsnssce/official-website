@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- {{ gallery }} -->
     <h1 class="heading">Gallery</h1>
     <section v-for="ga in gallery" :key="ga.title" class="allth">
