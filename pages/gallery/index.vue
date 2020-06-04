@@ -1,112 +1,87 @@
 <template>
-<div>
-<body>
-<h1>Lorem ipsum 1</h1>
-<div class="grid-container">
   <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
+    <!-- {{ gallery }} -->
+    <h1 class="heading">Gallery</h1>
+    <section v-for="ga in gallery" :key="ga.title" class="allth">
+      <h4 class="title">
+        {{ ga.title }}
+      </h4>
+      <div class="allimg">
+        <img v-for="im in ga.images" :key="im" :src="im" class="img">
+      </div>
+    </section>
   </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-  <div>
-    <img class='grid-item grid-item-1' src='https://via.placeholder.com/400x300.png' alt=''>
-  </div>
-</div>
-</body>
-</div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-  async asyncData (context) {
-    return await axios
-      .get(
-        'https://raw.githubusercontent.com/stacsnssce/webdata/master/gallery.json'
-      )
-      .then(({ data }) => {
-        return {
-          content: data
-        }
+  fetch ({ store }) {
+    // const psts = []
+    return axios.get('https://raw.githubusercontent.com/stacsnssce/webdata/master/gallery.json')
+      .then(async ({ data }) => {
+        /* eslint-disable no-console */
+        // console.log(data.gallery)
+        await store.commit('Gallery', data.gallery)
       })
+      .then(() => {
+      })
+  },
+  computed: {
+    gallery () {
+      return this.$store.state.gallery
+    }
+  },
+  head () {
+    return {
+      title: 'STACS Gallery',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Photo gallery showcasing events and activities of STACS' }
+      ]
+    }
   }
 }
 </script>
-<style>
-body {
+
+<style lang=scss scoped>
+.heading{
+  margin:15px;
+  font-size:40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: sans-serif;
 }
-
-h1 {
+.allth{
+    font-size: 30px;
+  color: black;
+  padding-left: 15px;
+  width: auto;
+  height: 4m0px;
+}
+.title{
   font-size: 30px;
+  background-color: #E0E0E0;
   color: black;
   padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px!important;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
-  width: 1200px;
+  width: auto;
   height: 4m0px;
 }
-
-.grid-container {
-  columns: 5 200px;
-  column-gap: 1.5rem;
-  width: 90%;
-  margin: 0 auto;
-}
-.grid-container div {
-  width: 150px;
+.img{
   margin: 0 1.5rem 1.5rem 0;
   display: inline-block;
-  width: 100%;
-
-  padding: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
 }
-.grid-container div:hover img {
-  filter: grayscale(0);
-}
-.grid-container div:hover {
-  border-color: coral;
-}
-.grid-container div img {
-  width: 100%;
-  border-radius: 5px;
-  transition: all 0.25s ease-in-out;
-}
-.grid-container div p {
-  margin: 5px 0;
-  padding: 0;
-  text-align: center;
-  font-style: italic;
-}
+.allimg{
 
+}
 </style>
