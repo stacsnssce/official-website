@@ -4,6 +4,10 @@ const materialize = {
   sidenav (option = {}) {
     const elems = document.querySelectorAll('.sidenav')
     M.Sidenav.init(elems, option)
+  },
+  carousel (option = {}) {
+    const elems = document.querySelectorAll('.carousel')
+    M.Carousel.init(elems, option)
   }
 }
 
