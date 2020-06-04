@@ -7,7 +7,7 @@
         {{ ga.title }}
       </h4>
       <div class="allimg row">
-        <img v-for="im in ga.images" :key="im" :src="im" class="img s12 m4 l3">
+        <img v-for="im in ga.images" :key="im" :src="im" class="img s12 m4 l3 card">
       </div>
     </section>
   </div>
@@ -77,7 +77,7 @@ export default {
   margin: 0 1.5rem 1.5rem 0;
   display: inline-block;
   padding: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);
+  /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
 }
