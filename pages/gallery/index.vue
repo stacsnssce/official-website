@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <!-- {{ gallery }} -->
-    <h1 class="heading">Gallery</h1>
+    <h1 class="heading">
+      Gallery
+    </h1>
     <section v-for="ga in gallery" :key="ga.title" class="allth">
       <h4 class="title">
         {{ ga.title }}
       </h4>
       <div class="allimg row">
-        <img v-for="im in ga.images" :key="im" :src="im" class="col img s12 m4 l3 card">
+        <div v-for="im in ga.images" :key="im" class="col s12 m4 l3 img-wrapper">
+          <img :src="im" class="img">
+        </div>
       </div>
     </section>
   </div>
@@ -43,46 +47,48 @@ export default {
 }
 </script>
 
-<style lang=scss scoped>
-.heading{
-  margin:15px;
-  font-size:40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: sans-serif;
-}
-.allth{
-    font-size: 30px;
-  color: black;
-  padding-left: 15px;
-  width: auto;
-  height: 4m0px;
-}
-.title{
-  font-size: 30px;
-  background-color: #E0E0E0;
-  color: black;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px!important;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  transition: all 0.25s ease-in-out;
-  width: auto;
-  height: 4m0px;
-}
-.img{
-  margin: 0 1.5rem 1.5rem 0;
-  display: inline-block;
-  padding: 10px;
-  /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
-  border-radius: 5px;
-  transition: all 0.25s ease-in-out;
-  box-sizing: border-box;
-}
-.allimg{
+<style lang="scss" scoped>
+.container {
+  .heading{
+    margin: 16px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+  }
+  .allth{
+    color: black;
+    width: auto;
 
+    .title{
+      font-size: 28px;
+      color: black;
+      display: inline-block;
+      padding-bottom: 12px;
+      font-weight: bold;
+      margin-left: 16px;
+      border-bottom: solid 4px $primary-color;
+    }
+    .img-wrapper {
+      padding: 10px;
+
+      .img{
+        display: inline-block;
+        width: 100%;
+        /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
+        border-radius: 5px;
+        transition: box-shadow 0.25s ease-in-out;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
+        }
+      }
+    }
+  }
 }
 </style>
