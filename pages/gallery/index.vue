@@ -80,6 +80,7 @@ export default {
   /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
+  box-sizing: border-box;
 }
 .allimg{
 
