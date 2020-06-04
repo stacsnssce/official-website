@@ -7,7 +7,7 @@
         {{ ga.title }}
       </h4>
       <div class="allimg row">
-        <img v-for="im in ga.images" :key="im" :src="im" class="img s12 m4 l3 card">
+        <img v-for="im in ga.images" :key="im" :src="im" class="col img s12 m4 l3 card">
       </div>
     </section>
   </div>
