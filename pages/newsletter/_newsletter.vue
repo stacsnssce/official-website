@@ -96,7 +96,7 @@ export default {
       padding: 0px 40px;
       margin: 0px auto;
       justify-content: center;
-      text-align: justify;
+      text-align: center;
 
       .description-header {
         font-weight: bold;

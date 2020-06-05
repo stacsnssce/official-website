@@ -5,7 +5,7 @@
       <div class="row">
         <div v-for="newsletter in newsletters" :key="newsletter.id" class="col s16 m6 l4">
           <div class="card small">
-            <nuxt-link :to="{ name: 'newsletter-newsletter', params: { desc: newsletter.desc, id: newsletter.id }}">
+            <nuxt-link :to="{ name: 'newsletter-newsletter', params: { newsletter: newsletter.desc, id: newsletter.id }}">
               <div class="card-image">
                 <progressive-img
                   :src="`${newsletter.attribute.cover}`"
