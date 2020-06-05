@@ -67,7 +67,7 @@ export default {
 
   .description-cover {
     background-position-x: center;
-    background-size: 1080px 350px;
+    background-size: 100% 350px;
     background-repeat: no-repeat;
     align-self: center;
   }
