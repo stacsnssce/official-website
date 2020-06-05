@@ -90,7 +90,7 @@ export default {
     border-radius: 25px;
 
     .card {
-      max-height: 250px !important;
+      max-height: 300px;
 
       &:hover {
         transform: scale(1.01);
