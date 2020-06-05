@@ -3,7 +3,7 @@
     <h1 class="newsletter-title center-align">Newsletter</h1>
     <div class="container newsletter-card">
       <div class="row">
-        <div v-for="newsletter in newsletters" :key="newsletter.id" class="col s12">
+        <div v-for="newsletter in newsletters" :key="newsletter.id" class="col s16 m6 l4">
           <div class="card small">
             <nuxt-link :to="{ name: 'newsletter-newsletter', params: { desc: newsletter.desc, id: newsletter.id }}">
               <div class="card-image">
