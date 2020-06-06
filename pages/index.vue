@@ -38,12 +38,12 @@
       </div>
     </div>
     <div class="home-achivement-events">
-      <h1>
+      <h1 class="home-achivement-events-h1">
         Achivements & Events
       </h1>
       <div class="home-achivement-events-display">
         <div>
-          <h3>Recent Achivements</h3>
+          <h3 class="home-achivement-events-h3">Recent Achivements</h3>
           <div class="home-achivement-events-innerbox">
             <dl>
               <li>Gayathry S got selected to attend Summer School at IISc Banglore.</li>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div>
-          <h3>
+          <h3 class="home-achivement-events-h3">
             Recent Events
           </h3>
           <div class="home-achivement-events-innerbox">
@@ -139,7 +139,7 @@ p {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-column-gap: 80px;
-  padding: 80px 150px;
+  padding: 100px 160px 160px 100px;
   .home-about-cse-content{
     text-align: left;
     font: large 200px/200px Source Sans Pro;
@@ -161,12 +161,13 @@ p {
   img{
     width: 100%;
     height:60vh;
+
   }
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
-  padding: 80px;
-  h1{
+  padding: 100px;
+  .home-achivement-events-h1{
     margin: 0px;
     padding: 2rem 0rem 4rem 0rem;
     text-align: left;
@@ -175,19 +176,19 @@ p {
     color: #2E2E38;
     opacity: 1;
     }
-  h3{
-    margin: 0px;
-    padding: 50px 0px;
-    text-align: left;
-    font: Bold 28px/28px Source Sans Pro;
-    letter-spacing: 0px;
-    color: #2E2E38;
-    opacity: 1;
-    }
   .home-achivement-events-display{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 100px;
+    .home-achivement-events-h3{
+      margin: 0px;
+      padding: 50px 0px;
+      text-align: left;
+      font: Bold 28px/28px Source Sans Pro;
+      letter-spacing: 0px;
+      color: #2E2E38;
+      opacity: 1;
+    }
     .home-achivement-events-innerbox{
       background-color: #F5F7F8;
       width: auto;
