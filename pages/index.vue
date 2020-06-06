@@ -138,6 +138,7 @@ p {
   display: grid;
   grid-template-columns: 40% 55%;
   grid-column-gap: 20px;
+  padding: 10px 80px;
   img{
     width: 100%;
     height:60vh;
@@ -146,27 +147,36 @@ p {
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
-  padding: 20px;
+  padding: 80px;
+  h1{
+    text-align: left;
+    font: Bold 40px/43px Source Sans Pro;
+    letter-spacing: 0px;
+    color: #2E2E38;
+    opacity: 1;
+    }
   h3{
     margin-right: 20px;
-    mar
-  }
+    text-align: left;
+    font: Bold 28px/28px Source Sans Pro;
+    letter-spacing: 0px;
+    color: #2E2E38;
+    opacity: 1;
+    }
   .home-achivement-events-display{
     display: flex;
     justify-content: space-around;
   }
     .home-achivement-events-innerbox{
-      background-color: ivory;
-      width: 500px;
-      height: 500px;
-      border: 5px solid green;
+      background-color: #F5F7F8;
+      width: 600px;
+      height: 550px;
       padding: 50px;
       margin-bottom: 50px;
-      text-align: left;
-      font: Light 16px/18px EYInterstate;
-      letter-spacing: 0px;
       color: #155CB4;
-      opacity: 1;
+      font: Bold 16px/18px EYInterstate;
+      line-height: 2;
+
     }
 }
 </style>
