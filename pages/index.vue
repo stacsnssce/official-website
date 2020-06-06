@@ -9,8 +9,8 @@
     </div>
     <div class="home-about-stacs">
       <div>
-        <h1>About STACS</h1>
-        <p>
+        <h1 class="home-about-stacs-h1">About STACS</h1>
+        <p class="home-about-stacs-p">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
           Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
@@ -126,13 +126,22 @@ p {
 }
 .home-about-stacs{
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-column-gap: 20px;
-  padding: 0px 50px;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 50px;
+  padding: 100px 100px 150px 120px;
   background-color: #F5FAFE;
-  img{
-    width: 350px;
-    height: 300px;
+  .home-about-stacs-h1{
+    text-align: left;
+    margin: 0px;
+    padding: 10px 0px;
+  }
+  .home-about-stacs-p{
+    text-align: left;
+    margin: 0px;
+    padding: 50px 0px;
+    line-height: 1.5;
+    font-size: 22px;
+    font-family: sans-serif;
   }
 }
 .home-about-cse{
@@ -141,18 +150,18 @@ p {
   grid-column-gap: 100px;
   padding: 160px 160px 160px 100px;
   .home-about-cse-p{
-    line-height: 2;
     text-align: left;
-    font: larger 200px/200px Source Sans Pro;
     margin: 0px;
     color: #424242;
     padding: 80px 160px 40px 80px;
+    line-height: 1.5;
+    font-size: 22px;
+    font-family: sans-serif;
   }
   .home-about-cse-h1{
     margin: 0px;
     padding-left: 80px;
     text-align: left;
-    font: Bold 30px/45px Source Sans Pro;
     color: #2E2E38;
   }
   .home-about-cse-img{
