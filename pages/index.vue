@@ -85,37 +85,44 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-h2 {
-  padding-left: 20px;
-  line-height: 1;
-  margin: 0px;
-}
 p {
   font-size: larger;
 }
-.home-top {
+.home-top{
+  padding-left: 80px;
   display: grid;
-  grid-template-columns:40% 60% ;
+  grid-template-columns:5fr 8fr;
+  grid-column-end: 50px;
   #logo{
-    height: 200px;
-    width: 200px;
-    margin: 50px;
+    height: 260px;
+    width: 300px;
   }
   img{
-    height: 60vh;
+    max-height: 500px;
+    height: auto;
     width: 100%;
+  }
+  h2 {
+  line-height: 1.2;
+  margin: 0px;
   }
   .home-college-image{
     margin: 0px;
+    padding-right: 0px;
   }
 }
 .home-notice-box{
-  background-color: aquamarine;
+  background-color: #52CBD3;
+  opacity: .8;
   list-style: none;
-  padding: 2rem 4rem;
-  margin: 24px auto;
+  padding: 3.5rem 8rem;
+  margin: 4rem auto;
   font-size: 150%;
-  font-family: monospace;
+  text-align: left;
+  font: Light 24px/28px EYInterstate monospace;
+  letter-spacing: 0px;
+  color: #155CB4;
+  opacity: 1;
 }
 .home-about-stacs{
   display: grid;
@@ -138,10 +145,11 @@ p {
   }
 }
 .home-achivement-events{
-  background-image: url("../assets/images/home-achivement-events-background-image.jpg");
+  background-image: url("../assets/images/home-achivement-events-background-image.png");
   padding: 20px;
   h3{
     margin-right: 20px;
+    mar
   }
   .home-achivement-events-display{
     display: flex;
@@ -153,7 +161,12 @@ p {
       height: 500px;
       border: 5px solid green;
       padding: 50px;
-      margin: 20px 20px 50px;
-  }
+      margin-bottom: 50px;
+      text-align: left;
+      font: Light 16px/18px EYInterstate;
+      letter-spacing: 0px;
+      color: #155CB4;
+      opacity: 1;
+    }
 }
 </style>
