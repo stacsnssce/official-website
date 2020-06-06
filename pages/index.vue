@@ -26,11 +26,11 @@
     </div>
     <div class="home-about-cse">
       <div>
-        <img src="~/assets/images/home-about-cse.jpg">
+        <img src="~/assets/images/home-about-cse.jpg" class="home-about-cse-img">
       </div>
       <div>
-        <h1>About CSE Department</h1>
-        <p class="home-about-cse-content">
+        <h1 class="home-about-cse-h1">About CSE Department</h1>
+        <p class="home-about-cse-p">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
           Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
@@ -129,7 +129,7 @@ p {
   grid-template-columns: 40% 60%;
   grid-column-gap: 20px;
   padding: 0px 50px;
-  background-color: darkgray;
+  background-color: #F5FAFE;
   img{
     width: 350px;
     height: 300px;
@@ -137,31 +137,27 @@ p {
 }
 .home-about-cse{
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-column-gap: 80px;
-  padding: 100px 160px 160px 100px;
-  .home-about-cse-content{
+  grid-template-columns: 45% 55%;
+  grid-column-gap: 100px;
+  padding: 160px 160px 160px 100px;
+  .home-about-cse-p{
+    line-height: 2;
     text-align: left;
-    font: large 200px/200px Source Sans Pro;
+    font: larger 200px/200px Source Sans Pro;
     margin: 0px;
-    letter-spacing: 0px;
     color: #424242;
-    opacity: 1;
-    padding: 40px 160px 40px 80px;
+    padding: 80px 160px 40px 80px;
   }
-  h1{
+  .home-about-cse-h1{
     margin: 0px;
     padding-left: 80px;
     text-align: left;
     font: Bold 30px/45px Source Sans Pro;
-    letter-spacing: 0px;
     color: #2E2E38;
-    opacity: 1
   }
-  img{
+  .home-about-cse-img{
     width: 100%;
-    height:60vh;
-
+    height: 60vh;
   }
 }
 .home-achivement-events{
