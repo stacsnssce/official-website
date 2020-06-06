@@ -28,9 +28,9 @@
       <div>
         <img src="~/assets/images/home-about-cse.jpg">
       </div>
-      <div style="padding-left: 50px;">
+      <div>
         <h1>About CSE Department</h1>
-        <p>
+        <p class="home-about-cse-content">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
           Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="home-achivement-events">
-      <h1 style=" padding-left:50px">
+      <h1>
         Achivements & Events
       </h1>
       <div class="home-achivement-events-display">
@@ -98,7 +98,7 @@ p {
     width: 300px;
   }
   img{
-    max-height: 500px;
+    max-height: 1200px;
     height: auto;
     width: 100%;
   }
@@ -129,6 +129,7 @@ p {
   grid-template-columns: 40% 60%;
   grid-column-gap: 20px;
   padding: 0px 50px;
+  background-color: darkgray;
   img{
     width: 350px;
     height: 300px;
@@ -136,19 +137,38 @@ p {
 }
 .home-about-cse{
   display: grid;
-  grid-template-columns: 40% 55%;
-  grid-column-gap: 20px;
-  padding: 10px 80px;
+  grid-template-columns: 40% 60%;
+  grid-column-gap: 80px;
+  padding: 80px 150px;
+  .home-about-cse-content{
+    text-align: left;
+    font: large 200px/200px Source Sans Pro;
+    margin: 0px;
+    letter-spacing: 0px;
+    color: #424242;
+    opacity: 1;
+    padding: 40px 160px 40px 80px;
+  }
+  h1{
+    margin: 0px;
+    padding-left: 80px;
+    text-align: left;
+    font: Bold 30px/45px Source Sans Pro;
+    letter-spacing: 0px;
+    color: #2E2E38;
+    opacity: 1
+  }
   img{
     width: 100%;
     height:60vh;
-    padding: 50px;
   }
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
   padding: 80px;
   h1{
+    margin: 0px;
+    padding: 2rem 0rem 4rem 0rem;
     text-align: left;
     font: Bold 40px/43px Source Sans Pro;
     letter-spacing: 0px;
@@ -156,7 +176,8 @@ p {
     opacity: 1;
     }
   h3{
-    margin-right: 20px;
+    margin: 0px;
+    padding: 50px 0px;
     text-align: left;
     font: Bold 28px/28px Source Sans Pro;
     letter-spacing: 0px;
@@ -164,19 +185,19 @@ p {
     opacity: 1;
     }
   .home-achivement-events-display{
-    display: flex;
-    justify-content: space-around;
-  }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
     .home-achivement-events-innerbox{
       background-color: #F5F7F8;
-      width: 600px;
+      width: auto;
       height: 550px;
       padding: 50px;
       margin-bottom: 50px;
       color: #155CB4;
-      font: Bold 16px/18px EYInterstate;
+      font: Bold 16px/18px Roboto;
       line-height: 2;
-
     }
+  }
 }
 </style>
