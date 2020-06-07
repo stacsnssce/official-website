@@ -1,8 +1,9 @@
 <template>
   <section class="description">
     <div
-    :style="`background-image: url('${title.cover}');`"
-      class="description-cover">
+      :style="`background-image: url('${title.cover}');`"
+      class="description-cover"
+    >
       <div class="container card description-content">
         <div class="col description-text">
           <h3 class="container description-header">
@@ -11,7 +12,8 @@
           <!-- <h5 class="description-date">date</h5> -->
           {{ /*eslint-disable-next-line*/ }}
           <div>
-            <p v-html="content"></p>
+            {{/* eslint-disable */}}
+            <div v-html="content"></div>
           </div>
         </div>
       </div>
@@ -65,7 +67,7 @@ export default {
 
   .description-cover {
     background-position-x: center;
-    background-size: 1080px 350px;
+    background-size: 100% 350px;
     background-repeat: no-repeat;
     align-self: center;
   }

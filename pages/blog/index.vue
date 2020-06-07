@@ -27,10 +27,10 @@
             </div>
             <div class="author-details">
               <h5 class="author-name">
-                {{ post.attribute.name }}
+                <i class="material-icons">create</i> {{ post.attribute.name }}
               </h5>
               <h5 class="blog-date">
-                {{ post.attribute.date }}
+                <i class="material-icons">date_range</i> {{ post.attribute.date }}
               </h5>
             </div>
           </div>
@@ -113,13 +113,14 @@ export default {
   .blog-card {
     padding: 20px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(100, 100, 100,0.2);
+    box-shadow: 0 0 10px rgba(100, 100, 100,0.5);
     transition: 0.2s linear;
     border-radius: 8px;
+    transform: scale(1.01);
 
     &:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 10px rgba(100, 100, 100,0.5);
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(100, 100, 100,0.2);
     }
     .blog-col {
       padding: 0 !important;
@@ -172,12 +173,24 @@ export default {
             font-size: 16px;
             font-weight: bold;
             margin: 0 !important;
+
+            i {
+              margin-right: 8px;
+              font-size: 16px;
+              line-height: 12px;
+            }
           }
         }
       }
-      .blog-date {
-        font-size: 12px;
+      .blog-date{
+        font-size: 16px;
         margin: 12px 0!important;
+
+        i {
+          margin-right: 8px;
+          font-size: 16px;
+          line-height: 12px;
+        }
       }
       .blog-desc {
         margin: 12px 0!important;
