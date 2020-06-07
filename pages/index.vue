@@ -14,7 +14,9 @@
     </div>
     <div class="home-about-stacs">
       <div>
-        <h1 class="home-about-stacs-h1">About STACS</h1>
+        <h1 class="home-about-stacs-h1">
+          About STACS
+        </h1>
         <p class="home-about-stacs-p">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
@@ -34,7 +36,9 @@
         <img src="~/assets/images/home-about-cse.jpg" class="home-about-cse-img">
       </div>
       <div>
-        <h1 class="home-about-cse-h1">About CSE Department</h1>
+        <h1 class="home-about-cse-h1">
+          About CSE Department
+        </h1>
         <p class="home-about-cse-p">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
@@ -48,7 +52,9 @@
       </h1>
       <div class="home-achivement-events-display">
         <div>
-          <h3 class="home-achivement-events-h3">Recent Achivements</h3>
+          <h3 class="home-achivement-events-h3">
+            Recent Achivements
+          </h3>
           <div class="home-achivement-events-innerbox">
             <dl>
               <li>Gayathry S got selected to attend Summer School at IISc Banglore.</li>
