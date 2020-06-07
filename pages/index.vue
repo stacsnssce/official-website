@@ -1,8 +1,13 @@
 <template>
   <div>
     <div class="home-top">
-      <div><img id="logo" src="~/assets/images/logo2.jpg"><h2>Student's</h2><h2>Association</h2><h2>Computer Science</h2></div>
-      <div><img class="nss-college-image" src="~/assets/images/nss-home-top.png"></div>
+      <div>
+        <img id="logo" src="~/assets/images/logo2.jpg">
+        <div class="home-logo-h2">
+          <h2>Student's</h2><h2>Association</h2><h2>Computer Science</h2>
+        </div>
+      </div>
+      <div><img class="home-college-image" src="~/assets/images/nss-home-top.png"></div>
     </div>
     <div class="home-notice-box">
       <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
@@ -85,44 +90,36 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-p {
-  font-size: larger;
-}
 .home-top{
-  padding-left: 80px;
+  padding-left: 100px;
   display: grid;
   grid-template-columns:5fr 8fr;
-  grid-column-end: 50px;
+  grid-column-gap: 50px;
   #logo{
     height: 260px;
     width: 300px;
   }
-  img{
-    max-height: 1200px;
-    height: auto;
-    width: 100%;
-  }
-  h2 {
+  .home-logo-h2 {
   line-height: 1.2;
   margin: 0px;
   }
   .home-college-image{
+    max-height: 1200px;
+    height: auto;
+    width: 100%;
     margin: 0px;
-    padding-right: 0px;
+    padding-right: auto;
+    margin-left: 0px;
   }
 }
 .home-notice-box{
-  background-color: #52CBD3;
-  opacity: .8;
-  list-style: none;
-  padding: 3.5rem 8rem;
-  margin: 4rem auto;
+  background-color: rgb(198, 231, 229);
+  padding: 5rem 10rem;
   font-size: 150%;
-  text-align: left;
-  font: Light 24px/28px EYInterstate monospace;
-  letter-spacing: 0px;
   color: #155CB4;
-  opacity: 1;
+  text-align: left;
+  font-size: 28px;
+  letter-spacing: 0px;
 }
 .home-about-stacs{
   display: grid;
@@ -171,7 +168,8 @@ p {
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
-  padding: 100px;
+  background-size: contain;
+    padding: 100px;
   .home-achivement-events-h1{
     margin: 0px;
     padding: 2rem 0rem 4rem 0rem;
