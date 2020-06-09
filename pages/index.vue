@@ -2,12 +2,13 @@
   <div>
     <div class="home-top">
       <div>
-        <img id="logo" src="~/assets/images/logo2.jpg">
+        <img id="logo" src="~/assets/images/logo4.png">
         <div class="home-logo-h2">
-          <h2>Student's</h2><h2>Association</h2><h2>Computer Science</h2>
+          <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+          <h5>Department of Computer Science and Engineering</h5>
         </div>
       </div>
-      <div><img class="home-college-image" src="~/assets/images/nss-home-top.png"></div>
+      <div><img class="home-college-image" src="~/assets/images/nssce.png"></div>
     </div>
     <div class="home-notice-box">
       <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
@@ -97,8 +98,10 @@ export default {
   grid-template-columns:5fr 8fr;
   grid-column-gap: 50px;
   #logo{
-    height: 260px;
-    width: 300px;
+    height: 240px;
+    width: 220px;
+    padding-left: 30px;
+    padding-top: 40px;
   }
   .home-logo-h2 {
   line-height: 1.2;
@@ -111,6 +114,7 @@ export default {
     margin: 0px;
     padding-right: auto;
     margin-left: 0px;
+    padding-bottom: 85px;
   }
 }
 .home-notice-box{
