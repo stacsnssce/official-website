@@ -4,7 +4,7 @@
       <div>
         <img id="logo" src="~/assets/images/logo4.png">
         <div class="home-logo-h2">
-          <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+          <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
           <h5>Department of Computer Science and Engineering</h5>
         </div>
       </div>
@@ -15,8 +15,10 @@
     </div>
     <div class="home-about-stacs">
       <div>
-        <h1 class="home-about-stacs-h1">About STACS</h1>
-        <p class="home-about-stacs-p">
+        <h1 class="home-about-stacs-h1">
+          About STACS
+        </h1>
+        <p class="flow-text">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
           Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
@@ -35,8 +37,10 @@
         <img src="~/assets/images/home-about-cse.jpg" class="home-about-cse-img">
       </div>
       <div>
-        <h1 class="home-about-cse-h1">About CSE Department</h1>
-        <p class="home-about-cse-p">
+        <h1 class="home-about-cse-h1">
+          About CSE Department
+        </h1>
+        <p class="flow-text">
           The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
           Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
           Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
@@ -44,31 +48,37 @@
       </div>
     </div>
     <div class="home-achivement-events">
-      <h1 class="home-achivement-events-h1">
-        Achivements & Events
-      </h1>
-      <div class="home-achivement-events-display">
-        <div>
-          <h3 class="home-achivement-events-h3">Recent Achivements</h3>
-          <div class="home-achivement-events-innerbox">
-            <dl>
-              <li>Gayathry S got selected to attend Summer School at IISc Banglore.</li>
-              <li>Winners of EPOCH(Online AI Challenge).</li>
-            </dl>
-          </div>
-        </div>
-        <div>
-          <h3 class="home-achivement-events-h3">
-            Recent Events
-          </h3>
-          <div class="home-achivement-events-innerbox">
-            <dl>
-              <li>Interview with Prasanth Nair IAS by Meekha Saji.</li>
-              <li>FOSS Blender Workshop.</li>
-              <li>Friday Club Meet-up.</li>
-              <li>Talk by IEEE SB NSSCE Chairman, as part of SIP for the FY students.</li>
-              <li>Student Introduction Programme (SIP) for the first year students (2019 Addmission) commences on 23rd july 2019</li>
-            </dl>
+      <div class="home-achivement-events-container">
+        <h1 class="home-achivement-events-h1">
+          Achivements & Events
+        </h1>
+        <div class="row">
+          <div class="home-achivement-events-display">
+            <div class="col s12 m12 l6">
+              <h3 class="home-achivement-events-h3">
+                Recent Achivements
+              </h3>
+              <div class="home-achivement-events-innerbox">
+                <dl>
+                  <li>Gayathry S got selected to attend Summer School at IISc Banglore.</li>
+                  <li>Winners of EPOCH(Online AI Challenge).</li>
+                </dl>
+              </div>
+            </div>
+            <div class="col s12 m12 l6">
+              <h3 class="home-achivement-events-h3">
+                Recent Events
+              </h3>
+              <div class="home-achivement-events-innerbox">
+                <dl>
+                  <li>Interview with Prasanth Nair IAS by Meekha Saji.</li>
+                  <li>FOSS Blender Workshop.</li>
+                  <li>Friday Club Meet-up.</li>
+                  <li>Talk by IEEE SB NSSCE Chairman, as part of SIP for the FY students.</li>
+                  <li>Student Introduction Programme (SIP) for the first year students (2019 Addmission) commences on 23rd july 2019</li>
+                </dl>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -135,15 +145,9 @@ export default {
   .home-about-stacs-h1{
     text-align: left;
     margin: 0px;
-    padding: 10px 0px;
-  }
-  .home-about-stacs-p{
-    text-align: left;
-    margin: 0px;
-    padding: 50px 0px;
-    line-height: 1.5;
-    font-size: 22px;
-    font-family: sans-serif;
+    padding: 10px 0px 30px 0px;
+    display: inline-block;
+    border-bottom: solid 4px #0DBDE8;
   }
 }
 .home-about-cse{
@@ -151,20 +155,13 @@ export default {
   grid-template-columns: 45% 55%;
   grid-column-gap: 100px;
   padding: 160px 160px 160px 100px;
-  .home-about-cse-p{
-    text-align: left;
-    margin: 0px;
-    color: #424242;
-    padding: 80px 160px 40px 80px;
-    line-height: 1.5;
-    font-size: 22px;
-    font-family: sans-serif;
-  }
   .home-about-cse-h1{
-    margin: 0px;
-    padding-left: 80px;
+    margin: 80px;
+    padding-bottom: 2rem;
     text-align: left;
     color: #2E2E38;
+    display: inline-block;
+    border-bottom: solid 4px #0DBDE8;
   }
   .home-about-cse-img{
     width: 100%;
@@ -173,21 +170,22 @@ export default {
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
-  background-size: contain;
-    padding: 100px;
-  .home-achivement-events-h1{
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+  .home-achivement-events-container{
+    padding: 5%;
+    .home-achivement-events-h1{
+    display: inline-block;
     margin: 0px;
-    padding: 2rem 0rem 4rem 0rem;
+    padding: 2rem 0rem 2rem 0rem;
     text-align: left;
     font: Bold 40px/43px Source Sans Pro;
     letter-spacing: 0px;
     color: #2E2E38;
     opacity: 1;
+    border-bottom: solid 4px #0DBDE8;
     }
-  .home-achivement-events-display{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 100px;
     .home-achivement-events-h3{
       margin: 0px;
       padding: 50px 0px;
@@ -206,6 +204,7 @@ export default {
       color: #155CB4;
       font: Bold 16px/18px Roboto;
       line-height: 2;
+      box-sizing: border-box;
     }
   }
 }
