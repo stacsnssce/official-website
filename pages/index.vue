@@ -8,7 +8,8 @@
           <h5>Department of Computer Science and Engineering</h5>
         </div>
       </div>
-      <div><img class="home-college-image" src="~/assets/images/nssce.png"></div>
+      <div>
+        <img class="home-college-image" src="~/assets/images/nssce5.png"></div>
     </div>
     <div class="home-notice-box">
       <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
@@ -114,7 +115,7 @@ export default {
     margin: 0px;
     padding-right: auto;
     margin-left: 0px;
-    padding-bottom: 85px;
+    padding-bottom: 40px;
   }
 }
 .home-notice-box{
