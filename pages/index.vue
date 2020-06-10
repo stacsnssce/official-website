@@ -1,50 +1,68 @@
 <template>
   <div>
-    <div class="home-top">
-      <div>
-        <img id="logo" src="~/assets/images/logo4.png">
-        <div class="home-logo-h2">
-          <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
-          <h5>Department of Computer Science and Engineering</h5>
+    <div class="row">
+      <div class="home-top">
+        <div class="col s12 m12 l6 center-align hide-on-large-only">
+          <img class="home-college-image-mobile" src="~/assets/images/nssce.png">
+        </div>
+        <div class="col s12 m12 l6 center-align hide-on-large-only">
+          <img id="logo-mobile" src="~/assets/images/logo4.png">
+          <div class="home-logo-h2">
+            <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h5>Department of Computer Science and Engineering</h5>
+          </div>
+        </div>
+        <div class="col s12 m12 l5 hide-on-med-and-down">
+          <img id="logo-large" src="~/assets/images/logo4.png">
+          <div class="home-logo-h2">
+            <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h5>Department of Computer Science and Engineering</h5>
+          </div>
+        </div>
+        <div class="col s12 m12 l7 center-align hide-on-med-and-down">
+          <img class="home-college-image" src="~/assets/images/nssce.png">
         </div>
       </div>
-      <div><img class="home-college-image" src="~/assets/images/nssce.png"></div>
     </div>
     <div class="home-notice-box">
       <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
     </div>
-    <div class="home-about-stacs">
-      <div>
-        <h1 class="home-about-stacs-h1">
-          About STACS
-        </h1>
-        <p class="flow-text">
-          The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
-          Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
-          Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
-        </p>
-      </div>
-      <div>
-        <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.png"></a>
-          <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.png"></a>
-          <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
+    <div class="row">
+      <div class="home-about-stacs">
+        <div class="col s12 m12 l6">
+          <h1 class="home-about-stacs-h1">
+            About STACS
+          </h1>
+          <p class="flow-text">
+            The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
+            Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
+            Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
+          </p>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.png"></a>
+            <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.png"></a>
+            <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="home-about-cse">
-      <div>
-        <img src="~/assets/images/home-about-cse.jpg" class="home-about-cse-img">
-      </div>
-      <div>
-        <h1 class="home-about-cse-h1">
-          About CSE Department
-        </h1>
-        <p class="flow-text">
-          The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
-          Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
-          Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
-        </p>
+    <div class="row">
+      <div class="home-about-cse">
+        <div class="col s12 m12 l6">
+          <img src="~/assets/images/home-about-cse.jpg" class="responsive-img">
+        </div>
+        <div class="col s12 m12 l6">
+          <h1 class="home-about-cse-h1">
+            About CSE Department
+          </h1>
+          <p class="flow-text">
+            The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
+            Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
+            Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
+          </p>
+        </div>
       </div>
     </div>
     <div class="home-achivement-events">
@@ -103,28 +121,36 @@ export default {
 </script>
 <style lang='scss' scoped>
 .home-top{
-  padding-left: 100px;
-  display: grid;
-  grid-template-columns:5fr 8fr;
-  grid-column-gap: 50px;
-  #logo{
+  padding-left: 5%;;
+  #logo-mobile{
+    max-height: 200px;
+    max-width: 200px;
+    height: 30vw;
+    width: 30vw;
+  }
+  #logo-large{
     height: 240px;
     width: 220px;
-    padding-left: 30px;
-    padding-top: 40px;
   }
-  .home-logo-h2 {
-  line-height: 1.2;
-  margin: 0px;
+  .home-logo-h2{
+    margin: 0px;
+    padding: 0px;
+    padding-right: 5%;
   }
   .home-college-image{
-    max-height: 1200px;
+    min-height: 400px !important;
     height: auto;
     width: 100%;
     margin: 0px;
-    padding-right: auto;
-    margin-left: 0px;
     padding-bottom: 85px;
+    object-fit: cover;
+  }
+  .home-college-image-mobile{
+    min-height: 300px !important;
+    width: 100%;
+    margin: 0px;
+    padding-bottom: 50px;
+    object-fit: cover;
   }
 }
 .home-notice-box{
@@ -137,53 +163,38 @@ export default {
   letter-spacing: 0px;
 }
 .home-about-stacs{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 50px;
-  padding: 100px 100px 150px 120px;
-  background-color: #F5FAFE;
+  padding: 5% 5%;
   .home-about-stacs-h1{
     text-align: left;
     margin: 0px;
-    padding: 10px 0px 30px 0px;
+    padding-bottom: 1.5rem;
     display: inline-block;
     border-bottom: solid 4px #0DBDE8;
   }
 }
 .home-about-cse{
-  display: grid;
-  grid-template-columns: 45% 55%;
-  grid-column-gap: 100px;
-  padding: 160px 160px 160px 100px;
+  padding: 5% 5%;
   .home-about-cse-h1{
-    margin: 80px;
-    padding-bottom: 2rem;
+    margin: 0px;
+    padding-bottom: 1.5rem;
     text-align: left;
     color: #2E2E38;
     display: inline-block;
     border-bottom: solid 4px #0DBDE8;
   }
-  .home-about-cse-img{
-    width: 100%;
-    height: 60vh;
-  }
 }
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
   background-size:cover;
-  width: 100%;
-  height: 100%;
   .home-achivement-events-container{
     padding: 5%;
     .home-achivement-events-h1{
     display: inline-block;
     margin: 0px;
-    padding: 2rem 0rem 2rem 0rem;
+    padding: 1.5rem 0rem;
     text-align: left;
     font: Bold 40px/43px Source Sans Pro;
-    letter-spacing: 0px;
     color: #2E2E38;
-    opacity: 1;
     border-bottom: solid 4px #0DBDE8;
     }
     .home-achivement-events-h3{
@@ -191,9 +202,7 @@ export default {
       padding: 50px 0px;
       text-align: left;
       font: Bold 28px/28px Source Sans Pro;
-      letter-spacing: 0px;
       color: #2E2E38;
-      opacity: 1;
     }
     .home-achivement-events-innerbox{
       background-color: #F5F7F8;
@@ -202,8 +211,8 @@ export default {
       padding: 50px;
       margin-bottom: 50px;
       color: #155CB4;
-      font: Bold 16px/18px Roboto;
-      line-height: 2;
+      font: Bold 16px/20px Source Sans Pro;
+      line-height: 1.9;
       box-sizing: border-box;
     }
   }
