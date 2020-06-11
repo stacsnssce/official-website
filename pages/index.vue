@@ -27,9 +27,8 @@
     <div class="home-notice-box">
       <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
     </div>
-    <div class="row">
-      <div class="home-about-stacs">
-        <div class="col s12 m12 l6">
+    <div class="row #e1f5fe light-blue lighten-5">
+        <div class="col s12 m12 l6 home-about-stacs">
           <h1 class="home-about-stacs-h1">
             About STACS
           </h1>
@@ -39,21 +38,35 @@
             Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
           </p>
         </div>
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 home-about-stacs">
           <div class="carousel">
             <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.png"></a>
             <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.png"></a>
             <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
           </div>
         </div>
-      </div>
     </div>
-    <div class="row">
-      <div class="home-about-cse">
-        <div class="col s12 m12 l6">
-          <img src="~/assets/images/home-about-cse.jpg" class="responsive-img">
+    <div class="home-about-cse">
+      <div class="row">
+        <div class="col s12 m12 l6 left-align hide-on-large-only">
+          <h1 class="home-about-cse-h1">
+            About CSE Department
+          </h1>
+          <p class="flow-text">
+            The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
+            Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
+            Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
+          </p>
         </div>
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6 hide-on-large-only">
+          <img src="~/assets/images/home-about-cse.png" class="responsive-img">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m12 l5 hide-on-med-and-down  ">
+          <img src="~/assets/images/home-about-cse.png" class="responsive-img ">
+        </div>
+        <div class="col s12 m12 l7 left-align hide-on-med-and-down home-about-cse-div">
           <h1 class="home-about-cse-h1">
             About CSE Department
           </h1>
@@ -121,7 +134,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .home-top{
-  padding-left: 5%;;
+  padding-left: 6%;
   #logo-mobile{
     max-height: 200px;
     max-width: 200px;
@@ -129,6 +142,7 @@ export default {
     width: 30vw;
   }
   #logo-large{
+    margin-top: 1.5rem;
     height: 240px;
     width: 220px;
   }
@@ -163,31 +177,37 @@ export default {
   letter-spacing: 0px;
 }
 .home-about-stacs{
-  padding: 5% 5%;
-  .home-about-stacs-h1{
-    text-align: left;
-    margin: 0px;
-    padding-bottom: 1.5rem;
-    display: inline-block;
-    border-bottom: solid 4px #0DBDE8;
-  }
+  padding: 6%;
 }
+
+.home-about-stacs-h1{
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 1.5rem;
+  display: inline-block;
+  border-bottom: solid 4px #0DBDE8;
+}
+
 .home-about-cse{
-  padding: 5% 5%;
-  .home-about-cse-h1{
-    margin: 0px;
-    padding-bottom: 1.5rem;
-    text-align: left;
-    color: #2E2E38;
-    display: inline-block;
-    border-bottom: solid 4px #0DBDE8;
-  }
+  padding: 6%;
 }
+.home-about-cse-div{
+  padding-left: 6rem;
+}
+.home-about-cse-h1{
+  margin: 0px;
+  padding-bottom: 1.5rem;
+  text-align: left;
+  color: #2E2E38;
+  display: inline-block;
+  border-bottom: solid 4px #0DBDE8;
+}
+
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
   background-size:cover;
   .home-achivement-events-container{
-    padding: 5%;
+    padding: 6%;
     .home-achivement-events-h1{
     display: inline-block;
     margin: 0px;
@@ -206,12 +226,10 @@ export default {
     }
     .home-achivement-events-innerbox{
       background-color: #F5F7F8;
-      width: auto;
       height: 550px;
       padding: 50px;
-      margin-bottom: 50px;
       color: #155CB4;
-      font: Bold 16px/20px Source Sans Pro;
+      font-size: 19px;
       line-height: 1.9;
       box-sizing: border-box;
     }
