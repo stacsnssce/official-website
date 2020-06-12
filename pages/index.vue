@@ -24,31 +24,44 @@
         </div>
       </div>
     </div>
-    <div class="home-notice-box">
-      <li>Interview with Prasanth Nair IAS by Meekha Saji </li>
+    <div class="home-notice-box flow-text #80d8ff light-blue accent-1">
+      <div class="row valign-wrapper">
+        <div class="col s1 m1 l1 arrow-right "></div>
+        <ul class="col s9 m9 l9 ">
+          <li class="left-align">
+            Interview with Prasanth Nair IAS by Meekha Saji
+          </li>
+        </ul>
+        <a class="btn col s1 m1 l1 test-margin test-padding #80d8ff light-blue accent-2">
+          <i class="material-icons left">chevron_left</i>
+        </a>
+        <a class="btn col s1 m1 l1 test-margin test-padding #80d8ff light-blue accent-3">
+          <i class="material-icons right">chevron_right</i>
+        </a>
+      </div>
     </div>
-    <div class="row #e1f5fe light-blue lighten-5">
-        <div class="col s12 m12 l6 home-about-stacs">
-          <h1 class="home-about-stacs-h1">
-            About STACS
-          </h1>
-          <p class="flow-text">
-            The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
-            Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
-            Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
-          </p>
+    <div class="row #e3f2fd blue lighten-5">
+      <div class="col s12 m12 l6 home-about-stacs">
+        <h1 class="home-about-stacs-h1">
+          About STACS
+        </h1>
+        <p class="flow-text">
+          The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
+          Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
+          Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
+        </p>
+      </div>
+      <div class="col s12 m12 l6 home-about-stacs">
+        <div class="carousel">
+          <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.jpg"></a>
+          <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.jpg"></a>
+          <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
         </div>
-        <div class="col s12 m12 l6 home-about-stacs">
-          <div class="carousel">
-            <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.png"></a>
-            <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.png"></a>
-            <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
-          </div>
-        </div>
+      </div>
     </div>
-    <div class="home-about-cse">
+    <div>
       <div class="row">
-        <div class="col s12 m12 l6 left-align hide-on-large-only">
+        <div class="col s12 m12 l6 left-align hide-on-large-only home-about-cse">
           <h1 class="home-about-cse-h1">
             About CSE Department
           </h1>
@@ -58,15 +71,15 @@
             Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
           </p>
         </div>
-        <div class="col s12 m12 l6 hide-on-large-only">
-          <img src="~/assets/images/home-about-cse.png" class="responsive-img">
+        <div class="col s12 m12 l6 hide-on-large-only home-about-cse-padding">
+          <img src="~/assets/images/home-about-cse.png" class="responsive-img ">
         </div>
       </div>
       <div class="row">
-        <div class="col s12 m12 l5 hide-on-med-and-down  ">
-          <img src="~/assets/images/home-about-cse.png" class="responsive-img ">
+        <div class="col s12 m12 l6 hide-on-med-and-down home-about-cse ">
+          <img src="~/assets/images/home-about-cse.png" class="responsive-img">
         </div>
-        <div class="col s12 m12 l7 left-align hide-on-med-and-down home-about-cse-div">
+        <div class="col s12 m12 l6 left-align hide-on-med-and-down home-about-cse">
           <h1 class="home-about-cse-h1">
             About CSE Department
           </h1>
@@ -96,7 +109,7 @@
                 </dl>
               </div>
             </div>
-            <div class="col s12 m12 l6">
+            <div class="col s12 m12 l6 home-achivement-events-inner-right-box">
               <h3 class="home-achivement-events-h3">
                 Recent Events
               </h3>
@@ -169,12 +182,25 @@ export default {
 }
 .home-notice-box{
   background-color: rgb(198, 231, 229);
-  padding: 5rem 10rem;
-  font-size: 150%;
-  color: #155CB4;
-  text-align: left;
-  font-size: 28px;
-  letter-spacing: 0px;
+  text-align: right;
+  list-style-type:none;
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1rem solid #13A59B;
+  }
+  .test-margin{
+    margin: 0px;
+  }
+  .test-padding{
+    padding: 6%;
+  }
+  .btn{
+    padding: 3% 3%;
+    box-sizing: border-box;
+  }
 }
 .home-about-stacs{
   padding: 6%;
@@ -189,11 +215,9 @@ export default {
 }
 
 .home-about-cse{
-  padding: 6%;
+  padding: 8% 6%;
 }
-.home-about-cse-div{
-  padding-left: 6rem;
-}
+
 .home-about-cse-h1{
   margin: 0px;
   padding-bottom: 1.5rem;
@@ -201,6 +225,17 @@ export default {
   color: #2E2E38;
   display: inline-block;
   border-bottom: solid 4px #0DBDE8;
+}
+
+.home-about-cse-padding{
+  padding: 15vw;
+}
+.responsive-img{
+  box-shadow: 4vw 4vw gainsboro;
+}
+.flow-text{
+  text-align: justify;
+  box-sizing: border-box;
 }
 
 .home-achivement-events{
@@ -226,6 +261,7 @@ export default {
     }
     .home-achivement-events-innerbox{
       background-color: #F5F7F8;
+      max-width: 770px;
       height: 550px;
       padding: 50px;
       color: #155CB4;
@@ -233,6 +269,13 @@ export default {
       line-height: 1.9;
       box-sizing: border-box;
     }
+    .home-achivement-events-inner-right-box{
+      padding-left: 3%;
+    }
   }
+}
+
+.row{
+  margin: 0px;
 }
 </style>
