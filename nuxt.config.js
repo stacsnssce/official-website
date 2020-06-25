@@ -9,7 +9,7 @@ const dynamicRoutes = async () => {
     .then(async (data) => {
       return await Promise.all(data.data.map(async (dat) => {
         return {
-          route: '/blog/' + dat.sha,
+          route: '/blog/' + dat.sha + '/',
           payload: await axios.get(dat.download_url)
             .then((res) => {
               const mdf = fm(res.data)
@@ -26,7 +26,7 @@ const dynamicRoutes = async () => {
     .then(async (data) => {
       return await Promise.all(data.data.map(async (dat) => {
         return {
-          route: '/activities/' + dat.sha,
+          route: '/activities/' + dat.sha + '/',
           payload: await axios.get(dat.download_url)
             .then((res) => {
               const mdf = fm(res.data)
