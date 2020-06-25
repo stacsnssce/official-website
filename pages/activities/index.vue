@@ -1,8 +1,8 @@
 <template>
   <section class="container card activities-wrapper">
-    <h4 class="page-title center-align">
-      <b>Activities</b>
-    </h4>
+    <h1 class="page-title center-align">
+      Activities
+    </h1>
     <div class="row activities m3">
       <div v-for="activity in activities" :key="activity.id" class="col s12 m6">
         <div class="card activity-card m4">
@@ -106,16 +106,17 @@ export default {
   border-left: 1px solid #eaecef;
   border-right: 1px solid #eaecef;
   border-bottom: 1px solid #eaecef;
+  border-radius: 25px;
 }
 .page-title {
-  color: #220e24;
+  color: black;
+  font: Bold 40px/43px Source Sans Pro;
 }
 .activities {
   padding: 10px;
 }
 .activity-card {
   text-align: center;
-  color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   border-radius: 8px;
@@ -124,13 +125,14 @@ export default {
 }
 .activity-card:hover {
   transform: scale(0.98, 0.99);
-  box-shadow: 0 0 10px rgba(100, 100, 100, 0.2);
+  box-shadow: 0 0 10px rgb(50, 165, 150);
   transition: 0.3s;
 }
 .act-card-title {
-  color: #0c3c78;
+  color: #035f59;
 }
 .act-card-date {
-  color: black;
+  color: rgb(49, 49, 49);
+  font-weight: 700;
 }
 </style>

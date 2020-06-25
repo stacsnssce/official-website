@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <div class="center-align">
+    <div class="center-align heading">
       <h4>Our Faculties</h4>
     </div>
     <br>
@@ -27,8 +27,10 @@
                 {{ c.designation }}
               </p>
               <a :href="`${c.profile || 'http://nssce.ac.in'}`">
+                <div class="prof">
                 View Profile
                 <i class="fa fa-info-circle" />
+                </div>
               </a>
               &nbsp;
               &nbsp;
@@ -78,18 +80,27 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+h4{
+  font-size: 32px;
+  font: Bolder 40px/43px Source Sans Pro;
+}
 .card-panel {
   border-radius: 16px 16px 16px 16px;
-  box-shadow: 0 4px 8px grey;
   height: 400px;
+  box-shadow: 0 4px 8px 0 rgb(100, 160, 152);
 }
 .text {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
+  color: #454747;
+}
+.prof{
+  color: #13A59B;
 }
 a:hover {
   text-decoration: underline;
+  color: #13A59B;
 }
 .middle {
   position: absolute;

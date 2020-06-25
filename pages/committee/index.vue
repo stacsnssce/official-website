@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="center-align">
+    <div class="center-align heading">
       <h4>Our Committee Members</h4>
     </div>
     <br>
@@ -90,10 +90,15 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+h4{
+  font-size: 32px;
+  font: Bolder 40px/43px Source Sans Pro;
+}
 .card-panel {
   border-radius: 16px 16px 16px 16px;
   box-shadow: 0 4px 8px grey;
   height: 360px;
+  box-shadow: 0 4px 8px 0 rgb(100, 160, 152);
 }
 .middle {
   text-align: center;
@@ -102,12 +107,14 @@ export default {
   line-height: 8pt;
 }
 .text {
+  color: #259e84;
   font-weight: bold;
   font-size: 24px;
 }
 .textd{
 font-weight: bold;
 font-size: 16px;
+color: #585e5c;
 }
 i:hover{
   transform: scale(1.3);

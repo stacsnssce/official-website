@@ -100,7 +100,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .post-wrapper {
   margin: 12px auto;
   padding: 20px 0;
@@ -108,8 +107,8 @@ export default {
   .page-title {
     font-size: 32px;
     font-weight: bolder;
+    font: Bolder 40px/43px Source Sans Pro;
   }
-
   .blog-card {
     padding: 20px;
     cursor: pointer;
@@ -117,6 +116,7 @@ export default {
     transition: 0.2s linear;
     border-radius: 8px;
     transform: scale(1.01);
+    background-color: white;
 
     &:hover {
       transform: scale(1);
@@ -153,7 +153,7 @@ export default {
         font-size: 24px;
         font-weight: bold;
         padding-bottom: 12px;
-        border-bottom: solid 1px #333333;
+        border-bottom: solid 1px #057e6e;
       }
       .author {
         display: flex;

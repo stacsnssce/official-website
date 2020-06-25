@@ -82,6 +82,7 @@ export default {
   .award-title {
     font-size: 32px;
     font-weight: bolder;
+    font: Bold 40px/43px Source Sans Pro;
   }
   .award-card {
     width: 90%;
@@ -90,13 +91,14 @@ export default {
     box-shadow: 0 0 20px rgba(73, 72, 72, 0.2);
     transition: 0.2s linear;
     border-radius: 25px;
+    background-size:cover;
 
     .card {
       max-height: 250px !important;
 
       &:hover {
         transform: scale(1.01);
-        box-shadow: 0 0 20px rgba(100, 100, 100, 0.5);
+        box-shadow: 0 0 20px  rgb(88, 90, 90);
       }
 
       h5 {
@@ -122,6 +124,9 @@ export default {
         object-fit: cover;
       }
     }
+    .small{
+      background-color: rgb(34, 148, 140);
+    }
     .card-content {
       background: transparent;
       padding: 0px 5px;
@@ -129,7 +134,7 @@ export default {
       font-size: 12px;
       font-weight: normal;
       text-align: center;
-      color: black;
+      color: rgb(233, 232, 232);
     }
   }
 }

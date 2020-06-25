@@ -57,6 +57,8 @@ export default {
     align-items: center;
     flex-direction: column;
     font-family: sans-serif;
+    font-size: 32px;
+    font: Bolder 40px/43px Source Sans Pro;
   }
   .allth{
     color: black;
