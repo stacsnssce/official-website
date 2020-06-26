@@ -124,9 +124,6 @@ export default {
         object-fit: cover;
       }
     }
-    .small{
-      background-color: rgb(34, 148, 140);
-    }
     .card-content {
       background: transparent;
       padding: 0px 5px;
@@ -134,7 +131,7 @@ export default {
       font-size: 12px;
       font-weight: normal;
       text-align: center;
-      color: rgb(233, 232, 232);
+      color: rgb(80, 79, 79);
     }
   }
 }

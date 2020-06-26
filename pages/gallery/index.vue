@@ -66,7 +66,7 @@ export default {
 
     .title{
       font-size: 28px;
-      color: black;
+      color: rgb(53, 52, 52);
       display: inline-block;
       padding-bottom: 12px;
       font-weight: bold;
