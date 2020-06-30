@@ -212,6 +212,7 @@ export default {
   padding-bottom: 1.5rem;
   display: inline-block;
   border-bottom: solid 4px #0DBDE8;
+  font: Bold 40px/43px Source Sans Pro;
 }
 
 .home-about-cse{
@@ -225,6 +226,7 @@ export default {
   color: #2E2E38;
   display: inline-block;
   border-bottom: solid 4px #0DBDE8;
+  font: Bold 40px/43px Source Sans Pro;
 }
 
 .home-about-cse-padding{
@@ -241,6 +243,7 @@ export default {
 .home-achivement-events{
   background-image: url("../assets/images/home-achivement-events-background-image.png");
   background-size:cover;
+  background-color: rgb(226, 243, 243);
   .home-achivement-events-container{
     padding: 6%;
     .home-achivement-events-h1{
