@@ -11,19 +11,22 @@
           <div class="card-panel hoverable">
             <div class="card-image center-align">
               <progressive-img
-                class="faculty-img circle responsive-image"
+                class="contributor-img circle responsive-image"
                 :src="`${c.attribute.avatar_url || '/profilepic.png'}`"
                 placeholder="/imageplaceholder1x1.png"
-                :alt="`${c.attribute.name}`"
+                :alt="`${c.attribute.login}`"
                 :blur="30"
               />
             </div>
             <div class="card-content center-align text">
-              <p style="font-size:20px">
+              <p v-if="c.attribute.name" style="font-size:20px">
                 {{ c.attribute.name }}
               </p>
+              <p v-else style="font-size:20px">
+                {{ c.attribute.login }}
+              </p>
               <a :href="c.attribute.html_url">
-                View GitHub Profile
+                View Profile
                 <i class="fa fa-github git circle" />
               </a>
               &nbsp;
@@ -62,11 +65,16 @@ export default {
     contributors () {
       return this.$store.state.contributors
     }
+  },
+  head () {
+    return {
+      title: 'Contributors - STACS Website'
+    }
   }
 }
 </script>
 <style lang="scss">
-.faculty-img {
+.contributor-img {
   width: 225px !important;
   height: 225px !important;
 
@@ -78,6 +86,10 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+h4{
+  font-size: 32px;
+  font: Bolder 40px/43px Source Sans Pro;
+}
 .card-panel {
   border-radius: 16px 16px 16px 16px;
   box-shadow: 0 4px 8px grey;
