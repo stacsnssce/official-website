@@ -2,7 +2,8 @@ export const state = () => ({
   posts: [],
   activities: [],
   gallery: [],
-  awards: []
+  awards: [],
+  contributors: []
 })
 
 export const mutations = {
@@ -17,5 +18,8 @@ export const mutations = {
   },
   Awards (state, awd) {
     state.awards = awd
+  },
+  Contributors (state, contributors) {
+    state.contributors = contributors
   }
 }
