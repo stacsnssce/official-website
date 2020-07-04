@@ -55,7 +55,6 @@ const dynamicRoutes = async () => {
     })
   
   const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
-  route = route.concat(dynamicContributorsRoutes)
   return route
 }
 
