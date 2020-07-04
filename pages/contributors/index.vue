@@ -6,7 +6,7 @@
     <br>
     <br>
     <div class="row">
-      <section v-for="c in contributors" :key="c.id">
+      <section v-for="c in contributors.slice().reverse()" :key="c.id">
         <div class="col s12 m4 l4">
           <div class="card-panel hoverable">
             <div class="card-image center-align">
