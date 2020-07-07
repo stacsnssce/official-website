@@ -49,6 +49,11 @@
                 Website Source
               </a>
             </li>
+            <li>
+              <a href="/contributors" class="grey-text text-lighten-3">
+                Contributors
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -80,6 +80,7 @@ export default {
   .newsletter-title {
     font-size: 32px;
     font-weight: bolder;
+    font: Bolder 40px/43px Source Sans Pro;
   }
   .newsletter-card {
     width: 90%;
@@ -88,7 +89,6 @@ export default {
     box-shadow: 0 0 20px rgba(73, 72, 72, 0.2);
     transition: 0.2s linear;
     border-radius: 25px;
-
     .card {
       max-height: 300px;
 
@@ -123,7 +123,7 @@ export default {
       font-size: 18px;
       font-weight: normal;
       text-align: center;
-      color: black;
+      color: rgb(21, 146, 125);
 
       .date{
         font-weight: lighter;

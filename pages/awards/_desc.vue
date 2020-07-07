@@ -80,6 +80,7 @@ export default {
     border-radius: 25px;
     top: 200px;
     cursor: pointer;
+    background-color: rgb(217, 244, 245);
 
     &:hover {
       scale: 1.02;
