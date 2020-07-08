@@ -26,18 +26,14 @@
     </div>
     <div class="home-notice-box flow-text #80d8ff light-blue accent-1">
       <div class="row valign-wrapper">
-        <div class="col s1 m1 l1 arrow-right"></div>
-        <ul class="col s9 m9 l9 ">
+        <div class="arrow-right"></div>
+        <ul >
           <li class="left-align">
             Interview with Prasanth Nair IAS by Meekha Saji
           </li>
         </ul>
-        <a class="btn col s1 m1 l1 test-margin test-padding #80d8ff light-blue accent-2">
-          <i class="material-icons left">chevron_left</i>
-        </a>
-        <a class="btn col s1 m1 l1 test-margin test-padding #80d8ff light-blue accent-3">
-          <i class="material-icons right">chevron_right</i>
-        </a>
+          <div class="marginPadding1 #80d8ff light-blue accent-2"></div>
+          <div class="marginPadding2 #80d8ff light-blue accent-3"></div>
       </div>
     </div>
     <div class="row #e3f2fd blue lighten-5">
@@ -129,7 +125,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   mounted () {
@@ -190,16 +185,20 @@ export default {
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
     border-left: 1rem solid #13A59B;
+    padding-left: 7%;
+    margin-left: 7%;
   }
-  .test-margin{
+  .marginPadding1{
+    margin: 0px 0px 0px auto;
+    max-height: 90px;
+    max-width: 90px;
+    padding: 6vh;
+  }
+  .marginPadding2{
     margin: 0px;
-  }
-  .test-padding{
-    padding: 6%;
-  }
-  .btn{
-    padding: 3% 3%;
-    box-sizing: border-box;
+    max-height: 90px;
+    max-width: 90px;
+    padding: 6vh;
   }
 }
 .home-about-stacs{
@@ -280,5 +279,8 @@ export default {
 
 .row{
   margin: 0px;
+}
+* {
+  box-sizing: border-box;
 }
 </style>
