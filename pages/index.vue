@@ -28,12 +28,33 @@
       <div class="row valign-wrapper">
         <div class="arrow-right"></div>
         <ul >
-          <li class="left-align">
+          <li class="left-align hide-on-small-only">
+            Interview with Prasanth Nair IAS by Meekha Saji
+          </li>
+          <li class="left-align hide-on-med-and-up noticeItem-fontSize">
             Interview with Prasanth Nair IAS by Meekha Saji
           </li>
         </ul>
-          <div class="marginPadding1 #80d8ff light-blue accent-2"></div>
-          <div class="marginPadding2 #80d8ff light-blue accent-3"></div>
+          <div style="margin: 0px 0px 0px auto">
+            <button class="button1-small hide-on-med-and-up">
+              <i class="material-icons left">chevron_left</i>
+            </button>
+          </div>
+          <div>
+            <button class="button2-small hide-on-med-and-up">
+              <i class="material-icons right">chevron_right</i>
+            </button>
+          </div>
+          <div style="margin: 0px 0px 0px auto">
+            <button class="button1 hide-on-small-only">
+              <i class="material-icons left">chevron_left</i>
+            </button>
+          </div>
+          <div>
+            <button class="button2 hide-on-small-only">
+              <i class="material-icons right">chevron_right</i>
+            </button>
+          </div>
       </div>
     </div>
     <div class="row #e3f2fd blue lighten-5">
@@ -188,17 +209,29 @@ export default {
     padding-left: 7%;
     margin-left: 7%;
   }
-  .marginPadding1{
-    margin: 0px 0px 0px auto;
-    max-height: 90px;
-    max-width: 90px;
-    padding: 6vh;
+  .button1{
+    background-color: #40c4ff;
+    padding: 8vw 5vw;
+    border: none;
   }
-  .marginPadding2{
-    margin: 0px;
-    max-height: 90px;
-    max-width: 90px;
-    padding: 6vh;
+  .button2{
+    background-color: #00b0ff;
+    padding: 8vw 5vw;
+    border: none;
+  }
+  .button1-small{
+    background-color: #40c4ff;
+    padding: 8vw 2vw;
+    border: none;
+  }
+  .button2-small{
+    background-color: #00b0ff;
+    padding: 8vw 2vw;
+    border: none;
+  }
+  .noticeItem-fontSize{
+    font-size: 14px;
+    padding-right: 10px;;
   }
 }
 .home-about-stacs{
