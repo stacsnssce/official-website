@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="row">
-      <div class="home-top">
-        <div class="col s12 m12 l6 center-align hide-on-large-only">
+    <div class="row home-top">
+      <div class="home-top-mobile">
+        <div class="col s12 m12 l6 home-college-img-div hide-on-large-only">
           <img class="home-college-image-mobile" src="~/assets/images/nssce5.png">
         </div>
         <div class="col s12 m12 l6 center-align hide-on-large-only">
@@ -12,6 +12,8 @@
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
+      </div>
+      <div class="home-top-large">
         <div class="col s12 m12 l5 hide-on-med-and-down">
           <img id="logo-large" src="~/assets/images/logo4.png">
           <div class="home-logo-h2">
@@ -19,7 +21,7 @@
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
-        <div class="col s12 m12 l7 center-align hide-on-med-and-down">
+        <div class="col s12 m12 l7 home-college-img-div hide-on-med-and-down">
           <img class="home-college-image" src="~/assets/images/nssce5.png">
         </div>
       </div>
@@ -35,23 +37,33 @@
             Interview with Prasanth Nair IAS by Meekha Saji
           </li>
         </ul>
-          <div style="margin: 0px 0px 0px auto">
-            <button class="button1-small hide-on-med-and-up">
+          <div class="button1-margin hide-on-med-and-up">
+            <button class="button1-small">
               <i class="material-icons left">chevron_left</i>
             </button>
           </div>
-          <div>
-            <button class="button2-small hide-on-med-and-up">
+          <div class="button2-margin hide-on-med-and-up">
+            <button class="button2-small">
               <i class="material-icons right">chevron_right</i>
             </button>
           </div>
-          <div style="margin: 0px 0px 0px auto">
-            <button class="button1 hide-on-small-only">
+          <div class="button1-margin hide-on-small-only hide-on-large-only">
+            <button class="button1-medium">
               <i class="material-icons left">chevron_left</i>
             </button>
           </div>
-          <div>
-            <button class="button2 hide-on-small-only">
+          <div class="button2-margin hide-on-small-only hide-on-large-only">
+            <button class="button2-medium">
+              <i class="material-icons right">chevron_right</i>
+            </button>
+          </div>
+          <div class="button1-margin hide-on-med-and-down">
+            <button class="button1-large ">
+              <i class="material-icons left">chevron_left</i>
+            </button>
+          </div>
+          <div class="button2-margin hide-on-med-and-down">
+            <button class="button2-large">
               <i class="material-icons right">chevron_right</i>
             </button>
           </div>
@@ -162,8 +174,16 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+$button1: #40c4ff;
+$button2: #00b0ff;
 .home-top{
-  padding-left: 6%;
+  .home-top-mobile{
+    padding-left: 0px;
+    margin-left: -5px;
+  }
+  .home-top-large{
+    padding-left: 6%;
+  }
   #logo-mobile{
     max-height: 200px;
     max-width: 200px;
@@ -182,24 +202,28 @@ export default {
   }
   .home-college-image{
     min-height: 400px !important;
-    height: auto;
-    width: 100%;
+    max-width:100%;
+    max-height:100%;
     margin: 0px;
     padding-bottom: 85px;
     object-fit: cover;
   }
   .home-college-image-mobile{
-    min-height: 300px !important;
+  min-height: 300px !important;
     width: 100%;
     margin: 0px;
-    padding-bottom: 50px;
+    padding: 0px 0px 50px 0px;
     object-fit: cover;
+  }
+  .home-college-img-div{
+    padding: 0px;
   }
 }
 .home-notice-box{
   background-color: rgb(198, 231, 229);
   text-align: right;
   list-style-type:none;
+  margin-top: 10px;
   .arrow-right {
     width: 0;
     height: 0;
@@ -209,29 +233,46 @@ export default {
     padding-left: 7%;
     margin-left: 7%;
   }
-  .button1{
-    background-color: #40c4ff;
-    padding: 8vw 5vw;
-    border: none;
-  }
-  .button2{
-    background-color: #00b0ff;
-    padding: 8vw 5vw;
-    border: none;
-  }
   .button1-small{
-    background-color: #40c4ff;
+    background-color: $button1;
     padding: 8vw 2vw;
     border: none;
   }
   .button2-small{
-    background-color: #00b0ff;
+    background-color: $button2;
     padding: 8vw 2vw;
     border: none;
   }
+  .button1-medium{
+    background-color: $button1;
+    padding: 5.5vw 4vw;
+    border: none;
+  }
+  .button2-medium{
+    background-color: $button2;
+    padding: 5.5vw 4vw;
+    border: none;
+  }
+  .button1-large{
+    background-color: $button1;
+    padding: 4vh;
+    border: none;
+  }
+  .button2-large{
+    background-color: $button2;
+    padding: 4vh;
+    border: none;
+  }
+  .button1-margin{
+    margin: 0px 0px 0px auto;
+  }
+  .button2-margin{
+    margin: 0px;
+  }
   .noticeItem-fontSize{
-    font-size: 14px;
-    padding-right: 10px;;
+    font-size: 13px;
+    padding-right: 10px;
+    font-weight: 400;
   }
 }
 .home-about-stacs{
@@ -269,7 +310,6 @@ export default {
 }
 .flow-text{
   text-align: justify;
-  box-sizing: border-box;
 }
 
 .home-achivement-events{
@@ -303,6 +343,7 @@ export default {
       font-size: 19px;
       line-height: 1.9;
       box-sizing: border-box;
+      overflow-y: scroll;
     }
     .home-achivement-events-inner-right-box{
       padding-left: 3%;
