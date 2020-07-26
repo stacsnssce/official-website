@@ -41,7 +41,7 @@ const dynamicRoutes = async () => {
   
     const dynamicContributorsRoutes = await axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
     .then(async (data) => {
-      return await Promise.all(data.data.map(async (dat) => {
+      return await Promise.all(data.map(async (dat) => {
         return {
           route: '/contributors/' + dat.author.login + '/',
           payload: await axios.get(dat.author.url)
