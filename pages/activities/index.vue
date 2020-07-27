@@ -127,7 +127,7 @@ export default {
 }
 .activity-card:hover {
   transform: scale(0.98, 0.99);
-  box-shadow: 0 0 10px rgb(50, 165, 150);
+    box-shadow: 0 0 10px rgb(88, 90, 90);
   transition: 0.3s;
 }
 .act-card-title {

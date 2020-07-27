@@ -38,9 +38,26 @@ const dynamicRoutes = async () => {
         }
       }))
     })
+//   
+//   
+//     Unable to execute
+// 
+//     const dynamicContributorsRoutes = await axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
+//     .then(async (data) => {
+//       return await Promise.all(data.data.map(async (dat) => {
+//         return {
+//           route: '/contributors/' + dat.author.login + '/',
+//           payload: await axios.get(dat.author.url)
+//             .then((res) => {
+//               return {
+//                 title: res.data
+//               }
+//             })
+//         }
+//       }))
+//     })
   
   const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
-
   return route
 }
 
@@ -111,7 +128,8 @@ export default {
     ]
   },
   generate: {
-    routes: dynamicRoutes
+    routes: dynamicRoutes,
+    
   },
 
   /*
