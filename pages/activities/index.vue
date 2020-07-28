@@ -124,6 +124,8 @@ export default {
   border-radius: 8px;
   padding: 10px;
   max-width: 450px;
+  height: 420px;
+  max-height: 450px;
 }
 .activity-card:hover {
   transform: scale(0.98, 0.99);
