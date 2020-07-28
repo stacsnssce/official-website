@@ -77,6 +77,8 @@ export default {
       padding: 10px;
 
       .img{
+        width:400px;
+        height:160px;
         display: inline-block;
         width: 100%;
         /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
