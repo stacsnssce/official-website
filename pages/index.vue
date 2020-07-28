@@ -17,7 +17,7 @@
         <div class="col s12 m12 l5 hide-on-med-and-down">
           <img id="logo-large" src="~/assets/images/logo4.png">
           <div class="home-logo-h2">
-            <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
