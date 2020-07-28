@@ -5,7 +5,7 @@
     </h1>
   <div class="container card activities-wrapper">
     <div class="row activities m3">
-      <div v-for="activity in activities" :key="activity.id" class="col s12 m6">
+      <div v-for="activity in activities.slice().reverse()" :key="activity.id" class="col s12 m6">
         <div class="card activity-card m4">
           <nuxt-link
             :to="{name: 'activities-desc', params: {desc: activity.desc, id: activity.id}}"

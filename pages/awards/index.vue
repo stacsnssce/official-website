@@ -5,7 +5,7 @@
     </h1>
     <div class="container award-card">
       <div class="row">
-        <div v-for="award in awards" :key="award.id" class="col l4 m6 s12">
+        <div v-for="award in awards.slice().reverse()" :key="award.id" class="col l4 m6 s12">
           <div class="card small">
             <nuxt-link :to="{ name: 'awards-desc', params: { desc: award.desc, id: award.id }}">
               <div class="card-image">
