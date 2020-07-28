@@ -8,7 +8,7 @@
         <div class="col s12 m12 l6 center-align hide-on-large-only">
           <img id="logo-mobile" src="~/assets/images/logo4.png">
           <div class="home-logo-h2">
-            <h2><b>Student's</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
@@ -75,9 +75,7 @@
           About STACS
         </h1>
         <p class="flow-text">
-          The department of computer science & engineering is the latest addition to NSSCE in the academic year 1999-2000.
-          Identification of India as a potential source of computer professionals and keep in mind the employment potential in this sector, the department aims at providing competent professionals to contribute its share to this Technologies boom.
-          Faculty members and supporting staff with rich experience are appointmented in the department. Our vision includes imparting quality education to the students in the domain of Computer Science and disseminate the knowledge of problem solving using computers.
+          Students' Association of Computer Science (STACS) is the departmental association of both B.Tech and M.Tech students of the Computer Science and Engineering Department.This association will be an integration of students into academic communities at the department level, crossing the course boundary, providing a platform to organise a range of activities with the support and resources of the department. The association will provide opportunities for students to share a range of extra-curricular experiences.
         </p>
       </div>
       <div class="col s12 m12 l6 home-about-stacs">

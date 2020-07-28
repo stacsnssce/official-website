@@ -29,20 +29,23 @@
             <br>
             <br><br>
             <div class="card-action middle">
-              <a :href="c.profiles.instagram" target="blank" class="wave-effect wave-light">
-                <i v-if="c.profiles.instagram" class="fa fa-instagram insta hoverable circle" />
-              </a>&nbsp;
               <a :href="c.profiles.twitter" target="blank" class="wave-effect wave-light">
                 <i v-if="c.profiles.twitter" class="fa fa-twitter hoverable twt circle" />
               </a>&nbsp;
               <a :href="c.profiles.linkedin" target="blank" class="wave-effect wave-light">
                 <i v-if="c.profiles.linkedin" class="fa fa-linkedin hoverable lin circle" />
               </a>&nbsp;
-              <a :href="c.profiles.github" target="blank" class="wave-effect wave-light">
-                <i v-if="c.profiles.github" class="fa fa-github hoverable git circle" />
+              <a :href="c.profiles.user" target="blank" class="wave-effect wave-light">
+                <i v-if="c.profiles.user" class="fa fa-user-circle-o user1 hoverable circle" />
+              </a>&nbsp;
+              <a :href="c.profiles.instagram" target="blank" class="wave-effect wave-light">
+                <i v-if="c.profiles.instagram" class="fa fa-instagram insta hoverable circle" />
               </a>&nbsp;
               <a :href="c.profiles.website" target="blank" class="wave-effect wave-light">
                 <i v-if="c.profiles.website" class="fa fa-globe hoverable web circle" />
+              </a>&nbsp;
+              <a :href="c.profiles.github" target="blank" class="wave-effect wave-light">
+                <i v-if="c.profiles.github" class="fa fa-github hoverable git circle" />
               </a>
             </div>
           </div>
@@ -139,5 +142,8 @@ i:hover{
 }
 .web{
  color: #FE4164;
+}
+.user1{
+ color: teal;
 }
 </style>
