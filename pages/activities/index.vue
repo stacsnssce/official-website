@@ -124,6 +124,7 @@ export default {
   border-radius: 8px;
   padding: 10px;
   max-width: 450px;
+  height: auto;
 }
 .activity-card:hover {
   transform: scale(0.98, 0.99);
@@ -136,5 +137,8 @@ export default {
 .act-card-date {
   color: rgb(49, 49, 49);
   font-weight: 700;
+}
+@media screen and (min-width: 600px) {
+  .activity-card {height: 430px;}
 }
 </style>

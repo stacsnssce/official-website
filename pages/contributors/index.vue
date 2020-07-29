@@ -6,26 +6,26 @@
     <br>
     <br>
     <div class="row">
-      <section v-for="c in contributors.slice().reverse()" :key="c.id">
+      <section v-for="c in content.slice().reverse()" :key="c.author.id">
         <div class="col s12 m4 l4">
           <div class="card-panel hoverable">
             <div class="card-image center-align">
               <progressive-img
                 class="contributor-img circle responsive-image"
-                :src="`${c.attribute.avatar_url || '/profilepic.png'}`"
+                :src="`${c.author.avatar_url || '/profilepic.png'}`"
                 placeholder="/imageplaceholder1x1.png"
-                :alt="`${c.attribute.login}`"
+                :alt="`${c.author.login}`"
                 :blur="30"
               />
             </div>
             <div class="card-content center-align text">
-              <p v-if="c.attribute.name" style="font-size:20px">
-                {{ c.attribute.name }}
+              <p v-if="c.author.login" style="font-size:20px">
+                {{ c.author.login }}
               </p>
               <p v-else style="font-size:20px">
                 {{ c.attribute.login }}
               </p>
-              <a :href="c.attribute.html_url">
+              <a :href="c.author.html_url">
                 View Profile
                 <i class="fa fa-github git circle" />
               </a>
@@ -42,29 +42,16 @@
 import axios from 'axios'
 
 export default {
-  fetch ({ store }) {
-    return axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
-      .then(async ({ data }) => {
-        /* eslint-disable no-console */
-        store.commit('Contributors', await Promise.all(data.map(async (element) => {
-          return await axios.get(element.author.url)
-            .then((res) => {
-              // eslint-disable-next-line
-              // console.log(mdf)
-              return {
-                attribute: res.data
-              }
-            })
-            // store.commit('Contributors', contributors)
-        })))
+  async asyncData (context) {
+    return await axios
+      .get(
+        'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
+      )
+      .then(({ data }) => {
+        return {
+          content: data
+        }
       })
-      .then(() => {
-      })
-  },
-  computed: {
-    contributors () {
-      return this.$store.state.contributors
-    }
   },
   head () {
     return {
