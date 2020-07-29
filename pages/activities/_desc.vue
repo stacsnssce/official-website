@@ -66,4 +66,7 @@ export default {
     }
     
   }
+  .container.card.description-content img{
+    max-width: 100%;
+  }
 </style>
