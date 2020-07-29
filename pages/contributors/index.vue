@@ -78,8 +78,6 @@ h4{
   font: Bolder 40px/43px Source Sans Pro;
 }
 .card-panel {
-  border-radius: 16px 16px 16px 16px;
-  box-shadow: 0 4px 8px grey;
   height: 400px;
 }
 .text {
