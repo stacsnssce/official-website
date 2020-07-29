@@ -64,9 +64,8 @@ export default {
       text-align: justify;
       display:flex;
     }
-    
   }
-  .container.card.description-content img{
-    max-width: 100%;
-  }
+  .description img {
+      max-width: 100%;
+    }
 </style>
