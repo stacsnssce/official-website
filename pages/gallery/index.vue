@@ -4,7 +4,7 @@
     <h1 class="heading">
       Gallery
     </h1>
-    <section v-for="ga in gallery" :key="ga.title" class="allth">
+    <section v-for="ga in gallery.slice().reverse()" :key="ga.title" class="allth">
       <h4 class="title">
         {{ ga.title }}
       </h4>
@@ -77,7 +77,7 @@ export default {
       padding: 10px;
 
       .img{
-        height: 250px;
+        height: auto;
         display: inline-block;
         width: 100%;
         /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
@@ -90,6 +90,9 @@ export default {
         &:hover {
           box-shadow: 0 0 2px rgba(100, 100, 100, 0.5);
         }
+      }
+      @media screen and (min-width: 600px) {
+        .img {height: 270px;}
       }
     }
   }
