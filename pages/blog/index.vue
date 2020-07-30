@@ -4,7 +4,7 @@
       Blog Posts
     </h1>
     <div class="container">
-      <div v-for="post in posts" :key="post.id" class="row blog-card">
+      <div v-for="post in posts.slice().reverse()" :key="post.id" class="row blog-card">
         <div class="col blog-col s12 m3 l4 center-align hide-on-med-and-up">
           <progressive-img
             :src="`${post.attribute.image}`"
@@ -23,7 +23,7 @@
           </h5>
           <div class="author">
             <div class="author-image">
-              <img :src="`https://github.com/${post.attribute.author}.png?size=50`" alt="`${post.attribute.author}`">
+              <img :src="`https://github.com/${post.attribute.author}.png?size=50`" alt="">
             </div>
             <div class="author-details">
               <h5 class="author-name">
