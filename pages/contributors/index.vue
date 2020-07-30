@@ -60,15 +60,19 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .contributor-img {
   width: 225px !important;
   height: 225px !important;
 
   img {
+    width: 225px!important;
+    height: 225px!important;
     object-fit: cover;
   }
 }
+</style>
+<style lang="scss" scoped>
 h4{
   font-size: 32px;
   font: Bolder 40px/43px Source Sans Pro;
