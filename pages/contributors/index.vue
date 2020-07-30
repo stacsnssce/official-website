@@ -8,7 +8,7 @@
     <div class="row">
       <section v-for="c in content.slice().reverse()" :key="c.author.id">
         <div class="col s12 m4 l4">
-          <div class="card-panel hoverable">
+          <div class="card-panel">
             <div class="card-image center-align">
               <progressive-img
                 class="contributor-img circle responsive-image"
@@ -19,11 +19,8 @@
               />
             </div>
             <div class="card-content center-align text">
-              <p v-if="c.author.login" style="font-size:20px">
+              <p style="font-size:20px">
                 {{ c.author.login }}
-              </p>
-              <p v-else style="font-size:20px">
-                {{ c.attribute.login }}
               </p>
               <a :href="c.author.html_url">
                 View Profile
@@ -60,19 +57,15 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .contributor-img {
   width: 225px !important;
   height: 225px !important;
 
   img {
-    width: 225px!important;
-    height: 225px!important;
     object-fit: cover;
   }
 }
-</style>
-<style lang="scss" scoped>
 h4{
   font-size: 32px;
   font: Bolder 40px/43px Source Sans Pro;
