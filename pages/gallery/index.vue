@@ -77,9 +77,9 @@ export default {
       padding: 10px;
 
       .img{
+        height: 250px;
         display: inline-block;
         width: 100%;
-        height: 250px;
         /*box-shadow: 5px 5px 5px rgba(0, 0, 255, 0.5);*/
         border-radius: 5px;
         transition: box-shadow 0.25s ease-in-out;
