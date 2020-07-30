@@ -86,7 +86,6 @@ export default {
     width: 90%;
     padding: 5%;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(73, 72, 72, 0.2);
     transition: 0.2s linear;
     border-radius: 25px;
     .card {
