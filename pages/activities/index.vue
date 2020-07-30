@@ -3,7 +3,7 @@
     <h1 class="page-title center-align">
       Activities
     </h1>
-  <div class="container card activities-wrapper">
+  <div class="container activities-wrapper">
     <div class="row activities m3">
       <div v-for="activity in activities.slice().reverse()" :key="activity.id" class="col s12 m6">
         <div class="card activity-card m4">
@@ -103,12 +103,7 @@ export default {
 .activities-wrapper {
   box-sizing: border-box;
   min-width: 200px;
-
   margin: 0 auto;
-  border-left: 1px solid #eaecef;
-  border-right: 1px solid #eaecef;
-  border-bottom: 1px solid #eaecef;
-  border-radius: 25px;
 }
 .page-title {
   color: black;
@@ -140,5 +135,6 @@ export default {
 }
 @media screen and (min-width: 600px) {
   .activity-card {height: 430px;}
+  .activities-wrapper{margin: 0 19%;}
 }
 </style>
