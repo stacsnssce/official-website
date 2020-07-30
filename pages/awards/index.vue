@@ -89,7 +89,6 @@ export default {
     padding: 5%;
     cursor: pointer;
     transition: 0.2s linear;
-    border-radius: 25px;
     background-size:cover;
 
     .card {
