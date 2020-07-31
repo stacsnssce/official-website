@@ -57,7 +57,7 @@ const dynamicRoutes = async () => {
 //       }))
 //     })
   
-  const route = [dynamicBlogRoutes, ...dynamicActivitiesRoutes]
+  const route = [...dynamicBlogRoutes, ...dynamicActivitiesRoutes]
   return route
 }
 
