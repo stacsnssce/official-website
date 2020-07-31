@@ -55,6 +55,19 @@ const dynamicRoutes = async () => {
       }
     }))
   })
+
+  const contributorsRoute = await axios
+  .get(
+    'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
+  )
+  .then(({ data }) => {
+    return {
+      route: '/contributors/',
+      payload: {
+        data
+      }
+    }
+  })
 //   
 //   
 //     Unable to execute
@@ -74,7 +87,7 @@ const dynamicRoutes = async () => {
 //       }))
 //     })
   
-  const route = [...dynamicAwardsRoutes, ...dynamicBlogRoutes, ...dynamicActivitiesRoutes]
+  const route = [...dynamicAwardsRoutes, ...dynamicBlogRoutes, ...dynamicActivitiesRoutes, ...contributorsRoute]
   return route
 }
 

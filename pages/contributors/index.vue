@@ -42,16 +42,22 @@
 import axios from 'axios'
 
 export default {
-  async asyncData (context) {
-    return await axios
-      .get(
-        'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
-      )
-      .then(({ data }) => {
+  async asyncData({params, payload}) {
+      if(payload) {
         return {
-          content: data
+            content: payload.data
         }
-      })
+      } else {
+        return await axios
+        .get(
+          'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
+        )
+        .then(({ data }) => {
+          return {
+            content: data
+          }
+        })
+      }
   },
   head () {
     return {
