@@ -49,8 +49,6 @@ export default {
         /* eslint-disable no-console */
         store.commit('Contributors', data)
       })
-      .then(() => {
-      })
   },
   computed: {
     contributors () {
