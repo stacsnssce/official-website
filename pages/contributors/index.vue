@@ -6,7 +6,7 @@
     <br>
     <br>
     <div class="row">
-      <section v-for="c in content.slice().reverse()" :key="c.author.id">
+      <section v-for="c in contributors.slice().reverse()" :key="c.author.id">
         <div class="col s12 m4 l4">
           <div class="card-panel hoverable">
             <div class="card-image center-align">
@@ -42,23 +42,32 @@
 import axios from 'axios'
 
 export default {
-  async asyncData({params, payload}) {
-      if(payload) {
-        return {
-            content: payload.data
-        }
-      } else {
-        return await axios
-        .get(
-          'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
-        )
-        .then(({ data }) => {
-          return {
-            content: data
-          }
-        })
-      }
+  fetch ({ store }) {
+    // const psts = []
+    return axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
+      .then(async ({ data }) => {
+        /* eslint-disable no-console */
+        store.commit('Contributors', data)
+      })
+      .then(() => {
+      })
   },
+  computed: {
+    contributors () {
+      return this.$store.state.contributors
+    }
+  },
+  // async asyncData (context) {
+  //   return await axios
+  //     .get(
+  //       'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
+  //     )
+  //     .then(({ data }) => {
+  //       return {
+  //         content: data
+  //       }
+  //     })
+  // },
   head () {
     return {
       title: 'Contributors - STACS Website'
