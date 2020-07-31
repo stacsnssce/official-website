@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="center-align">
-      <h4>Our Contributors</h4>
+      <h4>People who made it possible</h4>
     </div>
     <br>
     <br>
