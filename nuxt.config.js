@@ -57,7 +57,7 @@ const dynamicRoutes = async () => {
 //       }))
 //     })
   
-  const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
+  const route = [dynamicBlogRoutes, ...dynamicActivitiesRoutes]
   return route
 }
 
@@ -105,7 +105,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules

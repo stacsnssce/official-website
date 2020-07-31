@@ -1,12 +1,12 @@
 <template>
-  <section>
+  <section class="activities-page">
     <h1 class="page-title center-align">
       Activities
     </h1>
   <div class="container activities-wrapper">
-    <div class="row activities m3">
+    <div class="row">
       <div v-for="activity in activities.slice().reverse()" :key="activity.id" class="col s12 m6">
-        <div class="card activity-card m4">
+        <div class="card activity-card">
           <nuxt-link
             :to="{name: 'activities-desc', params: {desc: activity.desc, id: activity.id}}"
           >
@@ -81,60 +81,51 @@ export default {
 </script>
 
 <style lang="scss">
-.activity-image {
-  max-width: inherit !important;
-  padding: 0 !important;
-
-  * {
-    padding: 0 !important;
+.activities-page{
+  .activity-image {
+    .progressive-image-wrapper,
+    .progressive-image-main,
+    .progressive-image-placeholder {
+      max-width: inherit!important;
+      padding: 0 !important;
+    }
+  }
+  .card-image {
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 250px;
+    }
   }
 
-  .progressive-image-wrapper,
-  .progressive-image-main,
-  .progressive-image-placeholder {
-    max-width: inherit!important;
-    padding: 0 !important;
+  .page-title {
+    color: black;
+    font: Bold 40px/43px Source Sans Pro;
   }
-  img {
-    width: 100%;
-    object-fit: cover;
+  .activity-card {
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 450px;
+    height: auto;
   }
-}
-.activities-wrapper {
-  box-sizing: border-box;
-  min-width: 200px;
-  margin: 0 auto;
-}
-.page-title {
-  color: black;
-  font: Bold 40px/43px Source Sans Pro;
-}
-.activities {
-  padding: 10px;
-}
-.activity-card {
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 10px;
-  max-width: 450px;
-  height: auto;
-}
-.activity-card:hover {
-  transform: scale(0.98, 0.99);
-    box-shadow: 0 0 10px rgb(88, 90, 90);
-  transition: 0.3s;
-}
-.act-card-title {
-  color: #035f59;
-}
-.act-card-date {
-  color: rgb(49, 49, 49);
-  font-weight: 700;
-}
-@media screen and (min-width: 600px) {
-  .activity-card {height: 430px;}
-  .activities-wrapper{margin: 0 19%;}
+  .activity-card:hover {
+    transform: scale(0.98, 0.99);
+      box-shadow: 0 0 10px rgb(88, 90, 90);
+    transition: 0.3s;
+  }
+  .act-card-title {
+    color: #035f59;
+  }
+  .act-card-date {
+    color: rgb(49, 49, 49);
+    font-weight: 700;
+  }
+  .activities-wrapper{margin: 0 auto;}
+  @media screen and (min-width: 600px) {
+    .activity-card {height: 420px;}
+  }
 }
 </style>
