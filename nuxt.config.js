@@ -38,6 +38,23 @@ const dynamicRoutes = async () => {
         }
       }))
     })
+
+  const dynamicAwardsRoutes = await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/awards')
+  .then(async (data) => {
+    return await Promise.all(data.data.map(async (dat) => {
+      return {
+        route: '/awards/' + dat.sha + '/',
+        payload: await axios.get(dat.download_url)
+          .then((res) => {
+            const mdf = fm(res.data)
+            return {
+              title: mdf.attributes,
+              body:md.render(mdf.body)
+            }
+          })
+      }
+    }))
+  })
 //   
 //   
 //     Unable to execute
@@ -57,7 +74,7 @@ const dynamicRoutes = async () => {
 //       }))
 //     })
   
-  const route = [...dynamicBlogRoutes, ...dynamicActivitiesRoutes]
+  const route = [...dynamicAwardsRoutes, ...dynamicBlogRoutes, ...dynamicActivitiesRoutes]
   return route
 }
 
