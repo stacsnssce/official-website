@@ -44,7 +44,7 @@ import axios from 'axios'
 export default {
   fetch ({ store }) {
     // const psts = []
-    return axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
+    return await axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
       .then(async ({ data }) => {
         /* eslint-disable no-console */
         store.commit('Contributors', data)
