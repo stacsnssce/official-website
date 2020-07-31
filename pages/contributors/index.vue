@@ -42,7 +42,7 @@
 import axios from 'axios'
 
 export default {
-  fetch ({ store }) {
+  async fetch ({ store }) {
     // const psts = []
     return await axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
       .then(async ({ data }) => {
