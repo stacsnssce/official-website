@@ -120,6 +120,7 @@ export default {
         object-fit: cover;
       }
     }
+    
     .card-content {
       background: transparent;
       padding: 0px 5px;
