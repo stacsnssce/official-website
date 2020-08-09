@@ -8,7 +8,7 @@
         <div class="col s12 m12 l6 center-align hide-on-large-only">
           <img id="logo-mobile" src="~/assets/images/logo4.png">
           <div class="home-logo-h2">
-            <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h2>Students' Association of Computer Science</h2>
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
@@ -17,7 +17,7 @@
         <div class="col s12 m12 l5 hide-on-med-and-down">
           <img id="logo-large" src="~/assets/images/logo4.png">
           <div class="home-logo-h2">
-            <h2><b>Students'</b></h2><h2><b>Association of</b></h2><h2><b>Computer Science</b></h2>
+            <h2>Students' Association of Computer Science</h2>
             <h5>Department of Computer Science and Engineering</h5>
           </div>
         </div>
@@ -29,44 +29,19 @@
     <div class="home-notice-box flow-text #80d8ff light-blue accent-1">
       <div class="row valign-wrapper">
         <div class="arrow-right"></div>
-        <ul >
-          <li class="left-align hide-on-small-only">
-            Interview with Prasanth Nair IAS by Meekha Saji
-          </li>
-          <li class="left-align hide-on-med-and-up noticeItem-fontSize">
-            Interview with Prasanth Nair IAS by Meekha Saji
-          </li>
-        </ul>
-          <div class="button1-margin hide-on-med-and-up">
-            <button class="button1-small">
-              <i class="material-icons left">chevron_left</i>
-            </button>
-          </div>
-          <div class="button2-margin hide-on-med-and-up">
-            <button class="button2-small">
-              <i class="material-icons right">chevron_right</i>
-            </button>
-          </div>
-          <div class="button1-margin hide-on-small-only hide-on-large-only">
-            <button class="button1-medium">
-              <i class="material-icons left">chevron_left</i>
-            </button>
-          </div>
-          <div class="button2-margin hide-on-small-only hide-on-large-only">
-            <button class="button2-medium">
-              <i class="material-icons right">chevron_right</i>
-            </button>
-          </div>
-          <div class="button1-margin hide-on-med-and-down">
-            <button class="button1-large ">
-              <i class="material-icons left">chevron_left</i>
-            </button>
-          </div>
-          <div class="button2-margin hide-on-med-and-down">
-            <button class="button2-large">
-              <i class="material-icons right">chevron_right</i>
-            </button>
-          </div>
+        <a class="left-align" :href="`${notice[current_notice].link}`">
+          {{ notice[current_notice].title }}
+        </a>
+        <div class="button1-margin hide-on-med-and-down">
+          <button class="button1-large " @click="down">
+            <i class="material-icons left">chevron_left</i>
+          </button>
+        </div>
+        <div class="button2-margin hide-on-med-and-down">
+          <button class="button2-large">
+            <i class="material-icons right" @click="up">chevron_right</i>
+          </button>
+        </div>
       </div>
     </div>
     <div class="row #e3f2fd blue lighten-5">
@@ -130,9 +105,8 @@
                 Recent Achivements
               </h3>
               <div class="home-achivement-events-innerbox">
-                <dl>
-                  <li>Gayathry S got selected to attend Summer School at IISc Banglore.</li>
-                  <li>Winners of EPOCH(Online AI Challenge).</li>
+                <dl v-for="achivement in achivements" :key="achivement">
+                  <li>{{ achivement }}</li>
                 </dl>
               </div>
             </div>
@@ -141,12 +115,8 @@
                 Recent Events
               </h3>
               <div class="home-achivement-events-innerbox">
-                <dl>
-                  <li>Interview with Prasanth Nair IAS by Meekha Saji.</li>
-                  <li>FOSS Blender Workshop.</li>
-                  <li>Friday Club Meet-up.</li>
-                  <li>Talk by IEEE SB NSSCE Chairman, as part of SIP for the FY students.</li>
-                  <li>Student Introduction Programme (SIP) for the first year students (2019 Addmission) commences on 23rd july 2019</li>
+                <dl v-for="event in events" :key="event">
+                  <li>{{ event }}</li>
                 </dl>
               </div>
             </div>
@@ -157,9 +127,13 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   mounted () {
     this.$materialize.carousel()
+    this.notification()
+    setInterval(this.notification, 10000)
   },
   head () {
     return {
@@ -168,6 +142,65 @@ export default {
         { hid: 'description', name: 'description', content: 'An association of students in Department of Computer Science at NSS College of Engineering where they can develop their technical knowledge and share their talents within' }
       ]
     }
+  },
+  data () {
+    return {
+      notice: {title: "", link: ""},
+      current_notice: 0,
+      achivements: [],
+      events: []
+    }
+  },
+  async asyncData (context) {
+    const {notice} = await axios
+      .get(
+        'https://raw.githubusercontent.com/stacsnssce/webdata/master/notice.json',
+      )
+      .then(({ data }) => {
+        return {
+          notice: data
+        }
+      })
+      .catch(()=>[])
+    const recent = await axios
+    .get(
+      'https://raw.githubusercontent.com/stacsnssce/webdata/master/recent.json',
+    )
+    .then(({ data }) => {
+      return {
+        data
+      }
+    })
+    .catch(()=>{return {achivements: [], events: []}})
+
+    const {achivements, events} = recent.data
+    return {notice, achivements, events}
+  },
+  methods: {
+    up(){
+      if(this.current_notice === this.notice.length - 1 ) {
+        this.current_notice = 0
+      }
+      else {
+        this.current_notice ++
+      }
+    },
+    down(){
+      if(this.current_notice === 0 ) {
+        this.current_notice = this.notice.length - 1
+      }
+      else {
+        this.current_notice --
+      }
+    },
+    notification(){
+      if(this.current_notice === this.notice.length - 1) {
+        this.current_notice = 0
+      }
+      else {
+        this.current_notice ++
+      }
+    }
   }
 }
 </script>
@@ -175,28 +208,48 @@ export default {
 $button1: #40c4ff;
 $button2: #00b0ff;
 .home-top{
-  .home-top-mobile{
+  &-mobile{
     padding-left: 0px;
     margin-left: -5px;
   }
-  .home-top-large{
+  &-large{
     padding-left: 6%;
+    text-align: center;
   }
   #logo-mobile{
     max-height: 200px;
     max-width: 200px;
     height: 30vw;
-    width: 30vw;
   }
   #logo-large{
-    margin-top: 1.5rem;
+    margin: 0 auto;
+    margin-top: 32px;
     height: 240px;
-    width: 220px;
   }
   .home-logo-h2{
     margin: 0px;
     padding: 0px;
-    padding-right: 5%;
+
+    h2 {
+      font-size: 40px;
+      line-height: 50px;
+      text-shadow: #000000 1px 0px,
+                   #000000 -1px 0px;
+      font-weight: bolder;
+      letter-spacing: 1.2px;
+    }
+  @media screen and (max-width: 600px) {
+    h2{
+      text-align: center;
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+    h5 {
+      font-size: 20px;
+      font-weight: bolder;
+    }
   }
   .home-college-image{
     min-height: 400px !important;
@@ -220,85 +273,92 @@ $button2: #00b0ff;
 .home-notice-box{
   background-color: rgb(198, 231, 229);
   text-align: right;
+  font-size: 18px;
+  font-weight: bolder;
   list-style-type:none;
+  padding: 0;
   margin-top: 10px;
+
+  a {
+    color: #000000
+  }
+  
   .arrow-right {
     width: 0;
     height: 0;
+    font-size: 10px;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
     border-left: 1rem solid #13A59B;
     padding-left: 7%;
     margin-left: 7%;
   }
-  .button1-small{
-    background-color: $button1;
-    padding: 8vw 2vw;
-    border: none;
-  }
-  .button2-small{
-    background-color: $button2;
-    padding: 8vw 2vw;
-    border: none;
-  }
-  .button1-medium{
-    background-color: $button1;
-    padding: 5.5vw 4vw;
-    border: none;
-  }
-  .button2-medium{
-    background-color: $button2;
-    padding: 5.5vw 4vw;
-    border: none;
-  }
+
   .button1-large{
     background-color: $button1;
-    padding: 4vh;
+    padding: 16px;
     border: none;
   }
+  
   .button2-large{
     background-color: $button2;
-    padding: 4vh;
+    padding: 16px;
     border: none;
   }
+  
   .button1-margin{
     margin: 0px 0px 0px auto;
   }
+  
   .button2-margin{
     margin: 0px;
   }
+  
   .noticeItem-fontSize{
-    font-size: 13px;
     padding-right: 10px;
-    font-weight: 400;
+    font-weight: bolder;
   }
 }
 .home-about-stacs{
   padding: 6%;
+  
+  p {
+    padding-top: auto 0;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  
+  &-h1{
+    text-align: left;
+    margin: 0px;
+    padding-bottom: 1.5rem;
+    display: inline-block;
+    border-bottom: solid 4px #0DBDE8;
+    font: Bold 40px/43px Source Sans Pro;
+  }
 }
 
-.home-about-stacs-h1{
-  text-align: left;
-  margin: 0px;
-  padding-bottom: 1.5rem;
-  display: inline-block;
-  border-bottom: solid 4px #0DBDE8;
-  font: Bold 40px/43px Source Sans Pro;
-}
 
 .home-about-cse{
   padding: 8% 6%;
+
+  p {
+    padding-top: auto 0;
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  &-h1{
+    margin: 0px;
+    padding-bottom: 1.5rem;
+    text-align: left;
+    color: #2E2E38;
+    display: inline-block;
+    border-bottom: solid 4px #0DBDE8;
+    font: Bold 40px/43px Source Sans Pro;
+  }
 }
 
-.home-about-cse-h1{
-  margin: 0px;
-  padding-bottom: 1.5rem;
-  text-align: left;
-  color: #2E2E38;
-  display: inline-block;
-  border-bottom: solid 4px #0DBDE8;
-  font: Bold 40px/43px Source Sans Pro;
-}
 
 .home-about-cse-padding{
   padding: 15vw;

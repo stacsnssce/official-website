@@ -38,26 +38,42 @@ const dynamicRoutes = async () => {
         }
       }))
     })
-//   
-//   
-//     Unable to execute
-// 
-//     const dynamicContributorsRoutes = await axios.get('https://api.github.com/repos/stacsnssce/official-website/stats/contributors')
-//     .then(async (data) => {
-//       return await Promise.all(data.data.map(async (dat) => {
-//         return {
-//           route: '/contributors/' + dat.author.login + '/',
-//           payload: await axios.get(dat.author.url)
-//             .then((res) => {
-//               return {
-//                 title: res.data
-//               }
-//             })
-//         }
-//       }))
-//     })
   
-  const route = dynamicBlogRoutes.concat(dynamicActivitiesRoutes)
+  const dynamicNewsletterRoutes = await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/newsletter')
+  .then(async (data) => {
+    return await Promise.all(data.data.map(async (dat) => {
+      return {
+        route: '/newsletter/' + dat.sha + '/',
+        payload: await axios.get(dat.download_url)
+          .then((res) => {
+            const mdf = fm(res.data)
+            return {
+              title: mdf.attributes,
+              body:md.render(mdf.body)
+            }
+          })
+      }
+    }))
+  })
+
+  const dynamicAwardsRoutes = await axios.get('https://api.github.com/repos/stacsnssce/webdata/contents/awards')
+  .then(async (data) => {
+    return await Promise.all(data.data.map(async (dat) => {
+      return {
+        route: '/awards/' + dat.sha + '/',
+        payload: await axios.get(dat.download_url)
+          .then((res) => {
+            const mdf = fm(res.data)
+            return {
+              title: mdf.attributes,
+              body:md.render(mdf.body)
+            }
+          })
+      }
+    }))
+  })
+
+  const route = [...dynamicNewsletterRoutes,...dynamicAwardsRoutes, ...dynamicBlogRoutes, ...dynamicActivitiesRoutes]
   return route
 }
 
@@ -105,7 +121,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules

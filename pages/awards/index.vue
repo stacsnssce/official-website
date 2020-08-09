@@ -1,5 +1,5 @@
 <template>
-  <section class="wrapper container">
+  <section class="award-wrapper container">
     <h1 class="award-title center-align">
       Achievements
     </h1>
@@ -8,7 +8,7 @@
         <div v-for="award in awards.slice().reverse()" :key="award.id" class="col l4 m6 s12">
           <div class="card small">
             <nuxt-link :to="{ name: 'awards-desc', params: { desc: award.desc, id: award.id }}">
-              <div class="card-image">
+              <div class="award-image">
                 <progressive-img
                   :src="`${award.attribute.cover}`"
                   placeholder="/imageplaceholder800x500.png"
@@ -74,10 +74,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.wrapper {
+<style lang="scss">
+.award-wrapper {
   margin: 12px auto;
   // padding: 20px 0px;
+
 
   .award-title {
     font-size: 32px;
@@ -85,14 +86,15 @@ export default {
     font: Bold 40px/43px Source Sans Pro;
   }
   .award-card {
-    width: 90%;
-    padding: 5%;
+    width: 100%;
     cursor: pointer;
     transition: 0.2s linear;
     background-size:cover;
 
     .card {
-      max-height: 250px !important;
+      max-height:450px !important;
+      padding: 10px;
+      border-radius: 10px;
 
       &:hover {
         transform: scale(1.01);
@@ -100,28 +102,25 @@ export default {
       }
 
       h5 {
-        font-size: 20px;
+        font-size: 18px;
+        font-weight: bolder;
+        margin: 20px 0;
       }
     }
     .award-image {
-      max-width: inherit !important;
-      padding: 0 !important;
-
-      * {
-        padding: 0 !important;
-      }
-
-      .progressive-image-wrapper,
-      .progressive-image-main,
-      .progressive-image-placeholder {
+      height: 200px;
+      .progressive-image-placeholder,
+      .progressive-image-main {
         max-width: inherit !important;
         padding: 0 !important;
       }
-      img {
+      .progressive-image-main {
+        height: 200px !important;
         width: 100%;
         object-fit: cover;
       }
     }
+    
     .card-content {
       background: transparent;
       padding: 0px 5px;

@@ -10,11 +10,6 @@
         </a>
         <ul class="right hide-on-med-and-down">
           <li>
-            <nuxt-link to="/committee/">
-              Committee
-            </nuxt-link>
-          </li>
-          <li>
             <nuxt-link to="/faculties/">
               Faculties
             </nuxt-link>
@@ -44,6 +39,11 @@
               Blog
             </nuxt-link>
           </li>
+          <li>
+            <nuxt-link to="/committee/">
+              Committee
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -52,11 +52,6 @@
       <li>
         <nuxt-link to="/" class="sidenav-close">
           Home
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/committee/" class="sidenav-close">
-          Committee
         </nuxt-link>
       </li>
       <li>
@@ -87,6 +82,11 @@
       <li>
         <nuxt-link to="/blog/">
           Blog
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/committee/" class="sidenav-close">
+          Committee
         </nuxt-link>
       </li>
     </ul>

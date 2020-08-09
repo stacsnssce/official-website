@@ -1,38 +1,36 @@
 <template>
   <div class="container">
     <div class="center-align">
-      <h4>Our Contributors</h4>
+      <h4>Contributors</h4>
     </div>
     <br>
     <br>
     <div class="row">
-      <section v-for="c in content.slice().reverse()" :key="c.author.id">
-        <div class="col s12 m4 l4">
-          <div class="card-panel hoverable">
+      <section v-for="c in contributors" :key="c.id">
+        <a :href="c.html_url">
+        <div class="col s3 m2 l2">
             <div class="card-image center-align">
               <progressive-img
                 class="contributor-img circle responsive-image"
-                :src="`${c.author.avatar_url || '/profilepic.png'}`"
-                placeholder="/imageplaceholder1x1.png"
-                :alt="`${c.author.login}`"
+                :src="`${c.avatar_url || '/profilepic.png'}`"
+                placeholder="/profilepic.png"
+                :alt="`${c.login}`"
                 :blur="30"
               />
             </div>
-            <div class="card-content center-align text">
-              <p v-if="c.author.login" style="font-size:20px">
-                {{ c.author.login }}
+            <!-- <div class="center-align">
+              <p v-if="c.login" style="font-size:20px">
+                {{ c.login }}
               </p>
               <p v-else style="font-size:20px">
-                {{ c.attribute.login }}
+                {{ c.login }}
               </p>
-              <a :href="c.author.html_url">
                 View Profile
                 <i class="fa fa-github git circle" />
-              </a>
               &nbsp;
-            </div>
-          </div>
+            </div> -->
         </div>
+        </a>
       </section>
     </div>
   </div>
@@ -42,17 +40,30 @@
 import axios from 'axios'
 
 export default {
-  async asyncData (context) {
-    return await axios
-      .get(
-        'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
-      )
-      .then(({ data }) => {
-        return {
-          content: data
-        }
+  async fetch ({ store }) {
+    // const psts = []
+    return await axios.get('https://api.github.com/repos/stacsnssce/official-website/contributors')
+      .then(async ({ data }) => {
+        /* eslint-disable no-console */
+        store.commit('Contributors', data)
       })
   },
+  computed: {
+    contributors () {
+      return this.$store.state.contributors
+    }
+  },
+  // async asyncData (context) {
+  //   return await axios
+  //     .get(
+  //       'https://api.github.com/repos/stacsnssce/official-website/stats/contributors'
+  //     )
+  //     .then(({ data }) => {
+  //       return {
+  //         content: data
+  //       }
+  //     })
+  // },
   head () {
     return {
       title: 'Contributors - STACS Website'
@@ -62,13 +73,22 @@ export default {
 </script>
 <style lang="scss">
 .contributor-img {
-  width: 225px !important;
-  height: 225px !important;
-
+  min-height: 50px !important;
+  min-width: 50px !important;
+  width: 100% !important;
+  transition: transform 0.2s;
   img {
-    width: 225px!important;
-    height: 225px!important;
+    width: 100%;
+    min-height: 50px;
     object-fit: cover;
+    filter: grayscale(90%);
+  }
+}
+.contributor-img:hover {
+  transform: scale(1.2);
+  z-index: 5;
+  img {
+    filter: none;
   }
 }
 </style>
@@ -76,9 +96,6 @@ export default {
 h4{
   font-size: 32px;
   font: Bolder 40px/43px Source Sans Pro;
-}
-.card-panel {
-  height: 400px;
 }
 .text {
   text-align: center;
