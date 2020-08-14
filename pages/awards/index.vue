@@ -116,7 +116,7 @@ export default {
       }
       .progressive-image-main {
         height: 200px !important;
-        width: 100%;
+        width: 350px;
         object-fit: cover;
       }
     }
