@@ -56,7 +56,7 @@ export default {
     #eaecef;
     h1{
       text-align: center;
-      font-size: 2em;
+      font-size: 1.8em;
       font-weight: bold;
     }
     p{
@@ -66,6 +66,6 @@ export default {
     }
   }
   .description img {
-      max-width: 100%;
+      max-width: 350px;
     }
 </style>
