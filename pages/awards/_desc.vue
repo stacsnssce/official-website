@@ -107,6 +107,9 @@ export default {
   }
   .container.card.description-content img{
     max-width: 350px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
   }
 }
 </style>
