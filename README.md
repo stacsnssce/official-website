@@ -1,12 +1,12 @@
 # STACS WEBSITE
-
+ 
 > This is the official website for STACS - Students Association of Computer Science, an organization functioning in NSS College of Engineering
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ npm install
+$ npm install 
 
 # serve with hot reload at localhost:3000
 $ npm run dev
