@@ -55,9 +55,9 @@
       </div>
       <div class="col s12 m12 l6 home-about-stacs">
         <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="~/assets/images/home-about-stacs-carousel-image1.jpg"></a>
-          <a class="carousel-item" href="#two!"><img src="~/assets/images/home-about-stacs-carousel-image2.jpg"></a>
-          <a class="carousel-item" href="#three!"><img src="~/assets/images/home-about-stacs-carousel-image3.png"></a>
+          <a class="carousel-item" href="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/btech_placements_2021.jpg"><img src="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/btech_placements_2021.jpg"></a>
+          <a class="carousel-item" href="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/mtech_placements_2021.jpg"><img src="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/mtech_placements_2021.jpg"></a>
+          <a class="carousel-item" href="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/solasta21.jpg"><img src="https://raw.githubusercontent.com/stacsnssce/webassets/master/carousel/solasta21.jpg"></a>
         </div>
       </div>
     </div>
