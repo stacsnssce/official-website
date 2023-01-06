@@ -17,7 +17,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "frontmatter-markdown-loader": "^3.4.2",
     "jquery": "^3.5.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-progressive-image": "^3.2.0"
   },
   "devDependencies": {
